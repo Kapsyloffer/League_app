@@ -89,7 +89,7 @@ namespace League_2
             {
                 for(int i = 0; i<=w; i++)
                 {
-                    Note note = new Note("", i);
+                    Note note = new Note($"{i}", i);
                     Boolean exists = false;
                     foreach(Note n in notes)
                     {
@@ -109,7 +109,7 @@ namespace League_2
             {
                 printName += " ";
             }
-            return $"{ID}. {printName}\t\t\t\t {getWins(w)}/{getLosses(w)} \t {calculateScore(w, s)} {notes[w].getNote()}";
+            return $"{ID}. {printName}\t\t\t\t {getWins(w)}/{getLosses(w)} \t {calculateScore(w, s)}\t{notes[w].getNote()}";
         }
     }
 }

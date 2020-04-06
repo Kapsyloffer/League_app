@@ -15,7 +15,7 @@ namespace League_2
         private List<Player> PlayerList = new List<Player>();
         private Settings LocalSettings = new Settings();
         private int currentWeek = 1;
-        private int maxWeeks;
+        private int maxWeeks = 3;
         #endregion
         public List<Player> getPlayerList()
         {
@@ -44,6 +44,16 @@ namespace League_2
         public int getCurrentWeek()
         {
             return currentWeek;
+        }
+        public void setCurrentWeek(int w)
+        {
+            currentWeek = w;
+            //System.Windows.Forms.MessageBox.Show($"Changed week to {w}");
+        }
+
+        public int getMaxWeeks()
+        {
+            return maxWeeks;
         }
 
         public void loadFile()

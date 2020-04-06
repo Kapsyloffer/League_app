@@ -52,11 +52,28 @@ namespace League_2
         {
             comboWinner.Items.Clear();
             comboLoser.Items.Clear();
+            comboWeek.Items.Clear();
+            for (int i = 0; i <= dM.getMaxWeeks(); i++)
+            {
+                if (i == 0)
+                {
+                    comboWeek.Items.Add("Total");
+                }
+                else
+                {
+                    comboWeek.Items.Add(i);
+                }
+            }
+            //MessageBox.Show($"{dM.getCurrentWeek()}");
+            comboWeek.SelectedIndex = dM.getCurrentWeek();
+
+            //Add all players to the combobox
             foreach(Player p in dM.getPlayerList())
             {
-                comboWinner.Items.Add(p.getName());
-                comboLoser.Items.Add(p.getName());
+                comboWinner.Items.Add($"(ID:{p.getID()}) {p.getName()}");
+                comboLoser.Items.Add($"(ID:{p.getID()}) {p.getName()}");
             }
+
             if(dM.getPlayerList().Count()>=2)
             {
                 comboWinner.Enabled = true;
@@ -73,6 +90,19 @@ namespace League_2
         private void UpdateTextFields()
         {
             nameBox.Clear();
+        }
+
+        private void SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if(((ComboBox)sender).SelectedIndex == dM.getCurrentWeek())
+            {
+                return;
+            }
+            else
+            {
+                dM.setCurrentWeek(((ComboBox)sender).SelectedIndex);
+                UpdateAll();
+            }
         }
     }
 }
