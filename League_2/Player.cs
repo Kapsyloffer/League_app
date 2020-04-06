@@ -51,19 +51,38 @@ namespace League_2
         //TODO: if w = 0, show for all games.
         public int getWins(int w)
         {
-            //TODO: foreach game where week is w and winner is you, add setting.scorewinner
-            return 3;
+            int wins = 0;
+            foreach(Game g in games)
+            {
+                if(g.getWinner() == this && g.getWeek() == w)
+                {
+                    wins++;
+                }
+            }
+            return wins;
         }
         public int getLosses(int w)
         {
-            //TODO: foreach game where week is w and loser is you, add setting.scoreloser
-            return 2;
+            int losses = 0;
+            foreach (Game g in games)
+            {
+                if (g.getWinner() != this && g.getWeek() == w)
+                {
+                    losses++;
+                }
+            }
+            return losses;
         }
 
-        public int calculateScore(int w)
+        public int calculateScore(int w, Settings s)
         {
-            //return score;
-            return this.getWins(w) + this.getLosses(w);
+            //return score calculated using current settings & week
+            return getWins(w) * s.getWinPoint() + getLosses(w) * s.getLossPoint();
+        }
+
+        public String Print(int w, Settings s)
+        {
+            return $"{name} ({ID}) \t\t {getWins(w)}/{getLosses(w)} \t {calculateScore(w, s)}";
         }
     }
 }

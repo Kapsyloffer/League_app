@@ -40,9 +40,9 @@
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.comboBox2 = new System.Windows.Forms.ComboBox();
             this.button5 = new System.Windows.Forms.Button();
-            this.button6 = new System.Windows.Forms.Button();
+            this.addPlayer = new System.Windows.Forms.Button();
             this.comboBox3 = new System.Windows.Forms.ComboBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.nameBox = new System.Windows.Forms.TextBox();
             this.button7 = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -100,8 +100,8 @@
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.textBox1);
-            this.groupBox2.Controls.Add(this.button6);
+            this.groupBox2.Controls.Add(this.nameBox);
+            this.groupBox2.Controls.Add(this.addPlayer);
             this.groupBox2.Location = new System.Drawing.Point(626, 83);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(209, 99);
@@ -162,14 +162,15 @@
             this.button5.Text = "Add Game";
             this.button5.UseVisualStyleBackColor = true;
             // 
-            // button6
+            // addPlayer
             // 
-            this.button6.Location = new System.Drawing.Point(104, 66);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(87, 27);
-            this.button6.TabIndex = 9;
-            this.button6.Text = "Add Player";
-            this.button6.UseVisualStyleBackColor = true;
+            this.addPlayer.Location = new System.Drawing.Point(104, 66);
+            this.addPlayer.Name = "addPlayer";
+            this.addPlayer.Size = new System.Drawing.Size(87, 27);
+            this.addPlayer.TabIndex = 9;
+            this.addPlayer.Text = "Add Player";
+            this.addPlayer.UseVisualStyleBackColor = true;
+            this.addPlayer.Click += new System.EventHandler(this.buttonPress);
             // 
             // comboBox3
             // 
@@ -179,12 +180,12 @@
             this.comboBox3.Size = new System.Drawing.Size(98, 21);
             this.comboBox3.TabIndex = 9;
             // 
-            // textBox1
+            // nameBox
             // 
-            this.textBox1.Location = new System.Drawing.Point(6, 40);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(185, 20);
-            this.textBox1.TabIndex = 10;
+            this.nameBox.Location = new System.Drawing.Point(6, 40);
+            this.nameBox.Name = "nameBox";
+            this.nameBox.Size = new System.Drawing.Size(185, 20);
+            this.nameBox.TabIndex = 10;
             // 
             // button7
             // 
@@ -231,8 +232,8 @@
         private System.Windows.Forms.ComboBox comboBox2;
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Button button6;
+        private System.Windows.Forms.TextBox nameBox;
+        private System.Windows.Forms.Button addPlayer;
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.ComboBox comboBox3;
         private System.Windows.Forms.GroupBox groupBox4;

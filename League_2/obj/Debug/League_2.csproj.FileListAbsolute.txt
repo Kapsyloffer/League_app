@@ -7,3 +7,6 @@ C:\Users\User\source\repos\League_2\League_2\obj\Debug\League_2.csproj.GenerateR
 C:\Users\User\source\repos\League_2\League_2\obj\Debug\League_2.csproj.CoreCompileInputs.cache
 C:\Users\User\source\repos\League_2\League_2\obj\Debug\League_2.exe
 C:\Users\User\source\repos\League_2\League_2\obj\Debug\League_2.pdb
+C:\Users\User\source\repos\League_2\League_2\obj\Debug\League_2.Form1.resources
+C:\Users\User\source\repos\League_2\League_2\obj\Debug\League_2.Player_Stats.resources
+C:\Users\User\source\repos\League_2\League_2\obj\Debug\League_2.Settings.resources
