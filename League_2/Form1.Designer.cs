@@ -41,13 +41,13 @@
             this.nameBox = new System.Windows.Forms.TextBox();
             this.addPlayer = new System.Windows.Forms.Button();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.comboWeek = new System.Windows.Forms.ComboBox();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.listBox1 = new System.Windows.Forms.ListBox();
             this.openSettings = new System.Windows.Forms.Button();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.viewProfileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.deletePlayerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.comboWeek = new System.Windows.Forms.ComboBox();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -176,6 +176,17 @@
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Week";
             // 
+            // comboWeek
+            // 
+            this.comboWeek.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboWeek.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.comboWeek.FormattingEnabled = true;
+            this.comboWeek.Location = new System.Drawing.Point(6, 27);
+            this.comboWeek.Name = "comboWeek";
+            this.comboWeek.Size = new System.Drawing.Size(104, 21);
+            this.comboWeek.TabIndex = 9;
+            this.comboWeek.SelectedIndexChanged += new System.EventHandler(this.SelectedIndexChanged);
+            // 
             // groupBox4
             // 
             this.groupBox4.Controls.Add(this.listBox1);
@@ -188,12 +199,14 @@
             // 
             // listBox1
             // 
+            this.listBox1.Font = new System.Drawing.Font("Consolas", 9F);
             this.listBox1.FormattingEnabled = true;
+            this.listBox1.ItemHeight = 14;
             this.listBox1.Items.AddRange(new object[] {
             "1. Person #1\t\t\t\t\t\t13/37\t69  A good boi"});
             this.listBox1.Location = new System.Drawing.Point(7, 33);
             this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(595, 381);
+            this.listBox1.Size = new System.Drawing.Size(595, 368);
             this.listBox1.TabIndex = 0;
             // 
             // openSettings
@@ -225,17 +238,6 @@
             this.deletePlayerToolStripMenuItem.Name = "deletePlayerToolStripMenuItem";
             this.deletePlayerToolStripMenuItem.Size = new System.Drawing.Size(145, 22);
             this.deletePlayerToolStripMenuItem.Text = "Delete player.";
-            // 
-            // comboWeek
-            // 
-            this.comboWeek.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboWeek.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.comboWeek.FormattingEnabled = true;
-            this.comboWeek.Location = new System.Drawing.Point(6, 27);
-            this.comboWeek.Name = "comboWeek";
-            this.comboWeek.Size = new System.Drawing.Size(104, 21);
-            this.comboWeek.TabIndex = 9;
-            this.comboWeek.SelectedIndexChanged += new System.EventHandler(this.SelectedIndexChanged);
             // 
             // Form1
             // 

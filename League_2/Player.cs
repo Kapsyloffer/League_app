@@ -105,11 +105,11 @@ namespace League_2
                     }
                 }
             }
-            for (int i = printName.Count(); i <= 24; i++)
+            for (int i = printName.Count(); i <= 26; i++)
             {
                 printName += " ";
             }
-            return $"{ID}. {printName}\t\t\t\t {getWins(w)}/{getLosses(w)} \t {calculateScore(w, s)}\t{notes[w].getNote()}";
+            return $"{ID}. {printName}\t\t\t{getWins(w)}/{getLosses(w)} \t {calculateScore(w, s)}\t{notes[w].getNote()}";
         }
     }
 }

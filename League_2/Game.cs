@@ -16,6 +16,8 @@ namespace League_2
             this.winner = W;
             this.loser = L;
             this.week = week;
+            winner.addGame(this);
+            loser.addGame(this);
         }
         public Player getWinner()
         {

@@ -25,16 +25,48 @@ namespace League_2
             switch (((Button)sender).Name)
             {
                 case ("addPlayer"):
-                    if (nameBox.Text.Length > 2)
+                    if (nameBox.Text.Length >= 2)
                     {
                         dM.addPlayer(nameBox.Text);
                         UpdateAll();
                     }
                     return;
+                case ("addGame"):
+                    if(comboWinner.SelectedIndex== -1 || comboLoser.SelectedIndex == -1 || comboWinner.SelectedIndex == comboLoser.SelectedIndex)
+                    {
+                        MessageBox.Show("Please select different players.");
+                        return;
+                    }
+                    Player Winner = dM.getPlayerList()[comboWinner.SelectedIndex];
+                    Player Loser = dM.getPlayerList()[comboLoser.SelectedIndex];
+                    foreach(Game game in Winner.getGames())
+                    {
+                        if(game.getWinner() == Winner && game.getLoser() == Loser || game.getWinner() == Loser && game.getLoser() == Winner)
+                        {
+                            if(game.getWeek() == dM.getCurrentWeek())
+                            {
+                                MessageBox.Show("The game has already been played this week.");
+                                return;
+                            }
+                        }
+                    }
+                    Game g = new Game(Winner, Loser, dM.getCurrentWeek());
+                    UpdateAll();
+                    return;
+                case ("openSettings"):
+                    dM.getSettings().Show();
+                    return;
+                case ("saveFile"):
+                    dM.saveFile();
+                    return;
+                case ("loadFile"):
+                    dM.loadFile();
+                    return;
+
             }
         }
 
-        private void UpdateAll()
+        public void UpdateAll()
         {
             UpdateListBox();
             UpdateComboBox();

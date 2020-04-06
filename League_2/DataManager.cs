@@ -16,6 +16,7 @@ namespace League_2
         private Settings LocalSettings = new Settings();
         private int currentWeek = 1;
         private int maxWeeks = 3;
+        private Form1 f;
         #endregion
         public List<Player> getPlayerList()
         {
