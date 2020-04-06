@@ -33,15 +33,15 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
+            this.lossCount = new System.Windows.Forms.Label();
+            this.winCount = new System.Windows.Forms.Label();
             this.statGroup = new System.Windows.Forms.GroupBox();
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
-            this.label12 = new System.Windows.Forms.Label();
+            this.placement = new System.Windows.Forms.Label();
+            this.totalScore = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
@@ -97,42 +97,42 @@
             this.label4.Text = "99";
             this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // label5
+            // lossCount
             // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Arial", 32F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(376, 127);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(70, 49);
-            this.label5.TabIndex = 5;
-            this.label5.Text = "99";
-            this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lossCount.AutoSize = true;
+            this.lossCount.Font = new System.Drawing.Font("Arial", 32F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lossCount.Location = new System.Drawing.Point(376, 127);
+            this.lossCount.Name = "lossCount";
+            this.lossCount.Size = new System.Drawing.Size(70, 49);
+            this.lossCount.TabIndex = 5;
+            this.lossCount.Text = "99";
+            this.lossCount.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // label6
+            // winCount
             // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Arial", 32F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(376, 56);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(70, 49);
-            this.label6.TabIndex = 6;
-            this.label6.Text = "99";
-            this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.winCount.AutoSize = true;
+            this.winCount.Font = new System.Drawing.Font("Arial", 32F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.winCount.Location = new System.Drawing.Point(376, 56);
+            this.winCount.Name = "winCount";
+            this.winCount.Size = new System.Drawing.Size(70, 49);
+            this.winCount.TabIndex = 6;
+            this.winCount.Text = "99";
+            this.winCount.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // statGroup
             // 
             this.statGroup.Controls.Add(this.label1);
             this.statGroup.Controls.Add(this.button1);
             this.statGroup.Controls.Add(this.textBox1);
-            this.statGroup.Controls.Add(this.label12);
-            this.statGroup.Controls.Add(this.label11);
+            this.statGroup.Controls.Add(this.totalScore);
+            this.statGroup.Controls.Add(this.placement);
             this.statGroup.Controls.Add(this.label9);
             this.statGroup.Controls.Add(this.label10);
             this.statGroup.Controls.Add(this.label8);
             this.statGroup.Controls.Add(this.label7);
             this.statGroup.Controls.Add(this.listBox1);
-            this.statGroup.Controls.Add(this.label6);
-            this.statGroup.Controls.Add(this.label5);
+            this.statGroup.Controls.Add(this.winCount);
+            this.statGroup.Controls.Add(this.lossCount);
             this.statGroup.Controls.Add(this.label2);
             this.statGroup.Location = new System.Drawing.Point(13, 84);
             this.statGroup.Name = "statGroup";
@@ -181,27 +181,27 @@
             this.label10.TabIndex = 9;
             this.label10.Text = "Placement";
             // 
-            // label11
+            // placement
             // 
-            this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("Arial", 32F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(274, 56);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(70, 49);
-            this.label11.TabIndex = 11;
-            this.label11.Text = "99";
-            this.label11.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.placement.AutoSize = true;
+            this.placement.Font = new System.Drawing.Font("Arial", 32F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.placement.Location = new System.Drawing.Point(274, 56);
+            this.placement.Name = "placement";
+            this.placement.Size = new System.Drawing.Size(70, 49);
+            this.placement.TabIndex = 11;
+            this.placement.Text = "99";
+            this.placement.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // label12
+            // totalScore
             // 
-            this.label12.AutoSize = true;
-            this.label12.Font = new System.Drawing.Font("Arial", 32F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.Location = new System.Drawing.Point(274, 127);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(70, 49);
-            this.label12.TabIndex = 12;
-            this.label12.Text = "99";
-            this.label12.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.totalScore.AutoSize = true;
+            this.totalScore.Font = new System.Drawing.Font("Arial", 32F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.totalScore.Location = new System.Drawing.Point(274, 127);
+            this.totalScore.Name = "totalScore";
+            this.totalScore.Size = new System.Drawing.Size(70, 49);
+            this.totalScore.TabIndex = 12;
+            this.totalScore.Text = "99";
+            this.totalScore.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // textBox1
             // 
@@ -255,13 +255,13 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label lossCount;
+        private System.Windows.Forms.Label winCount;
         private System.Windows.Forms.GroupBox statGroup;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Label totalScore;
+        private System.Windows.Forms.Label placement;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label8;

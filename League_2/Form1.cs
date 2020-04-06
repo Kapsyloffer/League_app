@@ -66,6 +66,16 @@ namespace League_2
             }
         }
 
+        private List<Player> SortList(List<Player> p, int w, Settings s)
+        {
+            List<Player> x = p;
+            x.OrderBy(f => f.calculateScore(w, s));
+            for(int i = 0; i<x.Count; i++)
+            {
+                //x[i].setPlacement(i+1, w);
+            }
+            return x;
+        }
         public void UpdateAll()
         {
             UpdateListBox();
@@ -75,6 +85,7 @@ namespace League_2
         private void UpdateListBox()
         {
             listBox1.Items.Clear();
+            List<Player> sortedList = SortList(dM.getPlayerList(), dM.getCurrentWeek(), dM.getSettings());
             foreach (Player p in dM.getPlayerList())
             {
                 listBox1.Items.Add(p.Print(dM.getCurrentWeek(), dM.getSettings()));

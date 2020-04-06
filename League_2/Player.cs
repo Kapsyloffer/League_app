@@ -13,13 +13,29 @@ namespace League_2
         private List<String> rares = new List<String>();
         private List<Game> games = new List<Game>();
         private List<Note> notes = new List<Note>();
+        private List<int> placement = new List<int>();
         
         public Player(String n, int ID)
         {
             this.name = n;
             this.ID = ID;
-            
         }
+       /* public void setPlacement(int p, int w)
+        {
+            if(this.placement.Count < w)
+            {
+                for(int i = 0; i<=w; i++)
+                {
+                    this.placement.Add(1);
+                }
+            }
+            this.placement[w] = p;
+        }
+
+        public int getPlacement(int w)
+        {
+            return placement[w];
+        }*/
         public void setName(String n)
         {
             this.name = n;

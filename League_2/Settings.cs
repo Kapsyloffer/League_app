@@ -17,11 +17,11 @@ namespace League_2
         private int weeks;
         public Settings()
         {
-            //set default values
-            winPoints = 3;
-            lossPoints = 2;
-            weeks = 3;
             InitializeComponent();
+            //set default values
+            this.winPoints = 3;
+            this.lossPoints = 2;
+            this.weeks = 3;
         }
 
         public int getLossPoint()
