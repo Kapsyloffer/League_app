@@ -18,6 +18,7 @@ namespace League_2
         {
             this.name = n;
             this.ID = ID;
+            
         }
         public void setName(String n)
         {
@@ -82,7 +83,33 @@ namespace League_2
 
         public String Print(int w, Settings s)
         {
-            return $"{name} ({ID}) \t\t {getWins(w)}/{getLosses(w)} \t {calculateScore(w, s)}";
+            String printName = name;
+            //Ser till så att det finns Notes för alla veckor.
+            if (notes.Count <= w)
+            {
+                for(int i = 0; i<=w; i++)
+                {
+                    Note note = new Note("", i);
+                    Boolean exists = false;
+                    foreach(Note n in notes)
+                    {
+                        if(n.week() == i)
+                        {
+                            exists = true;
+                        }
+                    }
+                    if(!exists)
+                    {
+                        //Om det inte finns någon note för denna vecka, lägg till en.
+                        notes.Add(note);
+                    }
+                }
+            }
+            for (int i = printName.Count(); i <= 24; i++)
+            {
+                printName += " ";
+            }
+            return $"{ID}. {printName}\t\t\t\t {getWins(w)}/{getLosses(w)} \t {calculateScore(w, s)} {notes[w].getNote()}";
         }
     }
 }

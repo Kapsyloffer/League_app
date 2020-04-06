@@ -28,69 +28,73 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
+            this.openLatest = new System.Windows.Forms.Button();
+            this.openFile = new System.Windows.Forms.Button();
+            this.saveFile = new System.Windows.Forms.Button();
+            this.saveAs = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.listBox1 = new System.Windows.Forms.ListBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
-            this.button5 = new System.Windows.Forms.Button();
+            this.comboWinner = new System.Windows.Forms.ComboBox();
+            this.comboLoser = new System.Windows.Forms.ComboBox();
+            this.addGame = new System.Windows.Forms.Button();
             this.addPlayer = new System.Windows.Forms.Button();
             this.comboBox3 = new System.Windows.Forms.ComboBox();
             this.nameBox = new System.Windows.Forms.TextBox();
-            this.button7 = new System.Windows.Forms.Button();
+            this.openSettings = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.groupBox4.SuspendLayout();
             this.SuspendLayout();
             // 
-            // button1
+            // openLatest
             // 
-            this.button1.Location = new System.Drawing.Point(730, 345);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(87, 39);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "Open Latest";
-            this.button1.UseVisualStyleBackColor = true;
+            this.openLatest.Location = new System.Drawing.Point(730, 345);
+            this.openLatest.Name = "openLatest";
+            this.openLatest.Size = new System.Drawing.Size(87, 39);
+            this.openLatest.TabIndex = 0;
+            this.openLatest.Text = "Open Latest";
+            this.openLatest.UseVisualStyleBackColor = true;
+            this.openLatest.Click += new System.EventHandler(this.buttonPress);
             // 
-            // button2
+            // openFile
             // 
-            this.button2.Location = new System.Drawing.Point(626, 345);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(87, 39);
-            this.button2.TabIndex = 1;
-            this.button2.Text = "Open file";
-            this.button2.UseVisualStyleBackColor = true;
+            this.openFile.Location = new System.Drawing.Point(626, 345);
+            this.openFile.Name = "openFile";
+            this.openFile.Size = new System.Drawing.Size(87, 39);
+            this.openFile.TabIndex = 1;
+            this.openFile.Text = "Open file";
+            this.openFile.UseVisualStyleBackColor = true;
+            this.openFile.Click += new System.EventHandler(this.buttonPress);
             // 
-            // button3
+            // saveFile
             // 
-            this.button3.Location = new System.Drawing.Point(626, 395);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(87, 39);
-            this.button3.TabIndex = 3;
-            this.button3.Text = "Save File";
-            this.button3.UseVisualStyleBackColor = true;
+            this.saveFile.Location = new System.Drawing.Point(626, 395);
+            this.saveFile.Name = "saveFile";
+            this.saveFile.Size = new System.Drawing.Size(87, 39);
+            this.saveFile.TabIndex = 3;
+            this.saveFile.Text = "Save File";
+            this.saveFile.UseVisualStyleBackColor = true;
+            this.saveFile.Click += new System.EventHandler(this.buttonPress);
             // 
-            // button4
+            // saveAs
             // 
-            this.button4.Location = new System.Drawing.Point(730, 395);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(87, 39);
-            this.button4.TabIndex = 2;
-            this.button4.Text = "Save As...";
-            this.button4.UseVisualStyleBackColor = true;
+            this.saveAs.Location = new System.Drawing.Point(730, 395);
+            this.saveAs.Name = "saveAs";
+            this.saveAs.Size = new System.Drawing.Size(87, 39);
+            this.saveAs.TabIndex = 2;
+            this.saveAs.Text = "Save As...";
+            this.saveAs.UseVisualStyleBackColor = true;
+            this.saveAs.Click += new System.EventHandler(this.buttonPress);
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.button5);
-            this.groupBox1.Controls.Add(this.comboBox2);
-            this.groupBox1.Controls.Add(this.comboBox1);
+            this.groupBox1.Controls.Add(this.addGame);
+            this.groupBox1.Controls.Add(this.comboLoser);
+            this.groupBox1.Controls.Add(this.comboWinner);
             this.groupBox1.Location = new System.Drawing.Point(626, 188);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(209, 146);
@@ -137,30 +141,35 @@
             this.listBox1.Size = new System.Drawing.Size(595, 381);
             this.listBox1.TabIndex = 0;
             // 
-            // comboBox1
+            // comboWinner
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(6, 35);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(185, 21);
-            this.comboBox1.TabIndex = 0;
+            this.comboWinner.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboWinner.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.comboWinner.FormattingEnabled = true;
+            this.comboWinner.Location = new System.Drawing.Point(6, 35);
+            this.comboWinner.Name = "comboWinner";
+            this.comboWinner.Size = new System.Drawing.Size(185, 21);
+            this.comboWinner.TabIndex = 0;
             // 
-            // comboBox2
+            // comboLoser
             // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(6, 75);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(185, 21);
-            this.comboBox2.TabIndex = 1;
+            this.comboLoser.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboLoser.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.comboLoser.FormattingEnabled = true;
+            this.comboLoser.Location = new System.Drawing.Point(6, 75);
+            this.comboLoser.Name = "comboLoser";
+            this.comboLoser.Size = new System.Drawing.Size(185, 21);
+            this.comboLoser.TabIndex = 1;
             // 
-            // button5
+            // addGame
             // 
-            this.button5.Location = new System.Drawing.Point(104, 102);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(87, 27);
-            this.button5.TabIndex = 8;
-            this.button5.Text = "Add Game";
-            this.button5.UseVisualStyleBackColor = true;
+            this.addGame.Location = new System.Drawing.Point(104, 102);
+            this.addGame.Name = "addGame";
+            this.addGame.Size = new System.Drawing.Size(87, 27);
+            this.addGame.TabIndex = 8;
+            this.addGame.Text = "Add Game";
+            this.addGame.UseVisualStyleBackColor = true;
+            this.addGame.Click += new System.EventHandler(this.buttonPress);
             // 
             // addPlayer
             // 
@@ -183,33 +192,35 @@
             // nameBox
             // 
             this.nameBox.Location = new System.Drawing.Point(6, 40);
+            this.nameBox.MaxLength = 24;
             this.nameBox.Name = "nameBox";
             this.nameBox.Size = new System.Drawing.Size(185, 20);
             this.nameBox.TabIndex = 10;
             // 
-            // button7
+            // openSettings
             // 
-            this.button7.Location = new System.Drawing.Point(754, 20);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(81, 40);
-            this.button7.TabIndex = 11;
-            this.button7.Text = "Settings";
-            this.button7.UseVisualStyleBackColor = true;
+            this.openSettings.Location = new System.Drawing.Point(754, 20);
+            this.openSettings.Name = "openSettings";
+            this.openSettings.Size = new System.Drawing.Size(81, 40);
+            this.openSettings.TabIndex = 11;
+            this.openSettings.Text = "Settings";
+            this.openSettings.UseVisualStyleBackColor = true;
+            this.openSettings.Click += new System.EventHandler(this.buttonPress);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(847, 450);
-            this.Controls.Add(this.button7);
+            this.Controls.Add(this.openSettings);
             this.Controls.Add(this.groupBox4);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.button4);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.saveFile);
+            this.Controls.Add(this.saveAs);
+            this.Controls.Add(this.openFile);
+            this.Controls.Add(this.openLatest);
             this.Name = "Form1";
             this.Text = "League_improved";
             this.groupBox1.ResumeLayout(false);
@@ -223,14 +234,14 @@
 
         #endregion
 
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button openLatest;
+        private System.Windows.Forms.Button openFile;
+        private System.Windows.Forms.Button saveFile;
+        private System.Windows.Forms.Button saveAs;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.ComboBox comboBox2;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.Button addGame;
+        private System.Windows.Forms.ComboBox comboLoser;
+        private System.Windows.Forms.ComboBox comboWinner;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.TextBox nameBox;
         private System.Windows.Forms.Button addPlayer;
@@ -238,7 +249,7 @@
         private System.Windows.Forms.ComboBox comboBox3;
         private System.Windows.Forms.GroupBox groupBox4;
         private System.Windows.Forms.ListBox listBox1;
-        private System.Windows.Forms.Button button7;
+        private System.Windows.Forms.Button openSettings;
     }
 }
 

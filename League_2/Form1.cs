@@ -16,18 +16,19 @@ namespace League_2
         public Form1()
         {
             InitializeComponent();
+            UpdateAll();
         }
 
         private void buttonPress(object sender, EventArgs e)
         {
+            MessageBox.Show(((Button)sender).Name);
             switch (((Button)sender).Name)
             {
                 case ("addPlayer"):
                     if (nameBox.Text.Length > 2)
                     {
                         dM.addPlayer(nameBox.Text);
-                        nameBox.Clear();
-                        UpdateListBox();
+                        UpdateAll();
                     }
                     return;
             }
@@ -49,11 +50,29 @@ namespace League_2
         }
         private void UpdateComboBox()
         {
-
+            comboWinner.Items.Clear();
+            comboLoser.Items.Clear();
+            foreach(Player p in dM.getPlayerList())
+            {
+                comboWinner.Items.Add(p.getName());
+                comboLoser.Items.Add(p.getName());
+            }
+            if(dM.getPlayerList().Count()>=2)
+            {
+                comboWinner.Enabled = true;
+                comboLoser.Enabled = true;
+                addGame.Enabled = true;
+            }
+            else
+            {
+                comboWinner.Enabled = false;
+                comboLoser.Enabled = false;
+                addGame.Enabled = false;
+            }
         }
         private void UpdateTextFields()
         {
-
+            nameBox.Clear();
         }
     }
 }
