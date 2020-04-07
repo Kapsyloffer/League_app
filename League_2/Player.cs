@@ -20,22 +20,27 @@ namespace League_2
             this.name = n;
             this.ID = ID;
         }
-       /* public void setPlacement(int p, int w)
+        private void placementFailSafe(int w)
         {
-            if(this.placement.Count < w)
+            if (this.placement.Count <= w)
             {
-                for(int i = 0; i<=w; i++)
+                for (int i = 0; i <= w+1; i++)
                 {
-                    this.placement.Add(1);
+                    this.placement.Add(0);
                 }
             }
+        }
+       public void setPlacement(int p, int w)
+        {
+            placementFailSafe(w);
             this.placement[w] = p;
         }
 
         public int getPlacement(int w)
         {
+            placementFailSafe(w);
             return placement[w];
-        }*/
+        }
         public void setName(String n)
         {
             this.name = n;
@@ -125,7 +130,7 @@ namespace League_2
             {
                 printName += " ";
             }
-            return $"{ID}. {printName}\t\t\t{getWins(w)}/{getLosses(w)} \t {calculateScore(w, s)}\t{notes[w].getNote()}";
+            return $"{getPlacement(w)+1}. {printName}\t(ID:{ID})\t\t{getWins(w)}/{getLosses(w)} \t {calculateScore(w, s)}\t{notes[w].getNote()}";
         }
     }
 }

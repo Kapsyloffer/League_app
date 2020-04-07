@@ -42,7 +42,7 @@
             this.addPlayer = new System.Windows.Forms.Button();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.comboWeek = new System.Windows.Forms.ComboBox();
-            this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.placementBox = new System.Windows.Forms.GroupBox();
             this.listBox1 = new System.Windows.Forms.ListBox();
             this.openSettings = new System.Windows.Forms.Button();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
@@ -51,7 +51,7 @@
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
-            this.groupBox4.SuspendLayout();
+            this.placementBox.SuspendLayout();
             this.contextMenuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -187,15 +187,15 @@
             this.comboWeek.TabIndex = 9;
             this.comboWeek.SelectedIndexChanged += new System.EventHandler(this.SelectedIndexChanged);
             // 
-            // groupBox4
+            // placementBox
             // 
-            this.groupBox4.Controls.Add(this.listBox1);
-            this.groupBox4.Location = new System.Drawing.Point(12, 12);
-            this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(608, 422);
-            this.groupBox4.TabIndex = 7;
-            this.groupBox4.TabStop = false;
-            this.groupBox4.Text = "Standings (Week x)";
+            this.placementBox.Controls.Add(this.listBox1);
+            this.placementBox.Location = new System.Drawing.Point(12, 12);
+            this.placementBox.Name = "placementBox";
+            this.placementBox.Size = new System.Drawing.Size(608, 422);
+            this.placementBox.TabIndex = 7;
+            this.placementBox.TabStop = false;
+            this.placementBox.Text = "Standings (Week x)";
             // 
             // listBox1
             // 
@@ -245,7 +245,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(847, 450);
             this.Controls.Add(this.openSettings);
-            this.Controls.Add(this.groupBox4);
+            this.Controls.Add(this.placementBox);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
@@ -259,7 +259,7 @@
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             this.groupBox3.ResumeLayout(false);
-            this.groupBox4.ResumeLayout(false);
+            this.placementBox.ResumeLayout(false);
             this.contextMenuStrip1.ResumeLayout(false);
             this.ResumeLayout(false);
 
@@ -279,7 +279,7 @@
         private System.Windows.Forms.TextBox nameBox;
         private System.Windows.Forms.Button addPlayer;
         private System.Windows.Forms.GroupBox groupBox3;
-        private System.Windows.Forms.GroupBox groupBox4;
+        private System.Windows.Forms.GroupBox placementBox;
         private System.Windows.Forms.ListBox listBox1;
         private System.Windows.Forms.Button openSettings;
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;

@@ -29,7 +29,6 @@ namespace League_2
         {
             Player p = new Player(n, PlayerList.Count);
             PlayerList.Add(p);
-            System.Windows.Forms.MessageBox.Show(PlayerList.ToString());
         }
         public void setSettings(Settings s)
         {
