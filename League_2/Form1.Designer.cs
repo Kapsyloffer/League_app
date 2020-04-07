@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.openLatest = new System.Windows.Forms.Button();
             this.openFile = new System.Windows.Forms.Button();
             this.saveFile = new System.Windows.Forms.Button();
@@ -50,6 +51,12 @@
             this.deletePlayerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.viewProfile = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -191,6 +198,12 @@
             // 
             // placementBox
             // 
+            this.placementBox.Controls.Add(this.label6);
+            this.placementBox.Controls.Add(this.label5);
+            this.placementBox.Controls.Add(this.label4);
+            this.placementBox.Controls.Add(this.label3);
+            this.placementBox.Controls.Add(this.label2);
+            this.placementBox.Controls.Add(this.label1);
             this.placementBox.Controls.Add(this.listBox1);
             this.placementBox.Location = new System.Drawing.Point(12, 12);
             this.placementBox.Name = "placementBox";
@@ -204,8 +217,6 @@
             this.listBox1.Font = new System.Drawing.Font("Consolas", 9F);
             this.listBox1.FormattingEnabled = true;
             this.listBox1.ItemHeight = 14;
-            this.listBox1.Items.AddRange(new object[] {
-            "1. Person #1\t\t\t\t\t\t13/37\t69  A good boi"});
             this.listBox1.Location = new System.Drawing.Point(7, 33);
             this.listBox1.Name = "listBox1";
             this.listBox1.Size = new System.Drawing.Size(595, 368);
@@ -261,6 +272,60 @@
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.buttonPress);
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(7, 16);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(14, 13);
+            this.label1.TabIndex = 1;
+            this.label1.Text = "#";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(27, 16);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(38, 13);
+            this.label2.TabIndex = 2;
+            this.label2.Text = "Name:";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(342, 17);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(29, 13);
+            this.label3.TabIndex = 3;
+            this.label3.Text = "W/L";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(403, 17);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(35, 13);
+            this.label4.TabIndex = 4;
+            this.label4.Text = "Score";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(456, 17);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(33, 13);
+            this.label5.TabIndex = 5;
+            this.label5.Text = "Note:";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(240, 17);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(21, 13);
+            this.label6.TabIndex = 6;
+            this.label6.Text = "ID:";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -277,6 +342,7 @@
             this.Controls.Add(this.saveAs);
             this.Controls.Add(this.openFile);
             this.Controls.Add(this.openLatest);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Form1";
             this.Text = "League_improved";
             this.groupBox1.ResumeLayout(false);
@@ -284,6 +350,7 @@
             this.groupBox2.PerformLayout();
             this.groupBox3.ResumeLayout(false);
             this.placementBox.ResumeLayout(false);
+            this.placementBox.PerformLayout();
             this.contextMenuStrip1.ResumeLayout(false);
             this.ResumeLayout(false);
 
@@ -312,6 +379,12 @@
         private System.Windows.Forms.ComboBox comboWeek;
         private System.Windows.Forms.Button viewProfile;
         private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label1;
     }
 }
 

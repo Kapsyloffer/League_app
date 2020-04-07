@@ -33,6 +33,7 @@ namespace League_2
                 totalScore.Text = $"{p.calculateScore(f.dM.getCurrentWeek(), f.dM.getSettings())}";
                 placement.Text = $"{p.getPlacement(f.dM.getCurrentWeek()) + 1}";
                 addNote.Text = $"Add note (week {f.dM.getCurrentWeek()})";
+                textBox1.Text = p.getNote(week);
                 f.Close();
             }
             catch
@@ -45,7 +46,8 @@ namespace League_2
             switch(((Button)sender).Name)
             {
                 case ("addNote"):
-                    
+                    p.setNote(textBox1.Text, week);
+                    textBox1.Clear();
                     return;
             }
         }

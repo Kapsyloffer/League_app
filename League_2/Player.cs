@@ -24,13 +24,36 @@ namespace League_2
         {
             if (this.placement.Count <= w)
             {
-                for (int i = 0; i <= w+1; i++)
+                for (int i = 0; i <= w + 1; i++)
                 {
                     this.placement.Add(0);
                 }
             }
         }
-       public void setPlacement(int p, int w)
+        private void noteFailSafe(int w)
+        {
+            if (notes.Count <= w)
+            {
+                for (int i = 0; i <= w; i++)
+                {
+                    Note note = new Note("", i);
+                    Boolean exists = false;
+                    foreach (Note n in notes)
+                    {
+                        if (n.week() == i)
+                        {
+                            exists = true;
+                        }
+                    }
+                    if (!exists)
+                    {
+                        //Om det inte finns någon note för denna vecka, lägg till en.
+                        notes.Add(note);
+                    }
+                }
+            }
+        }
+        public void setPlacement(int p, int w)
         {
             placementFailSafe(w);
             this.placement[w] = p;
@@ -39,6 +62,15 @@ namespace League_2
         {
             placementFailSafe(w);
             return placement[w];
+        }
+        public String getNote(int w)
+        {
+            noteFailSafe(w);
+            return $"{notes[w].getContent()}";
+        }
+        public void setNote(String s, int w)
+        {
+            notes[w].setContent(s);
         }
         public void setName(String n)
         {
@@ -69,9 +101,9 @@ namespace League_2
         public int getWins(int w)
         {
             int wins = 0;
-            foreach(Game g in games)
+            foreach (Game g in games)
             {
-                if(g.getWinner() == this && g.getWeek() == w)
+                if (g.getWinner() == this && g.getWeek() == w)
                 {
                     wins++;
                 }
@@ -101,32 +133,12 @@ namespace League_2
         public String Print(int w, Settings s)
         {
             String printName = name;
-            //Ser till så att det finns Notes för alla veckor.
-            if (notes.Count <= w)
-            {
-                for(int i = 0; i<=w; i++)
-                {
-                    Note note = new Note($"{i}", i);
-                    Boolean exists = false;
-                    foreach(Note n in notes)
-                    {
-                        if(n.week() == i)
-                        {
-                            exists = true;
-                        }
-                    }
-                    if(!exists)
-                    {
-                        //Om det inte finns någon note för denna vecka, lägg till en.
-                        notes.Add(note);
-                    }
-                }
-            }
+            noteFailSafe(w);
             for (int i = printName.Count(); i <= 26; i++)
             {
                 printName += " ";
             }
-            return $"{getPlacement(w)+1}. {printName}\t(ID:{ID})\t\t{getWins(w)}/{getLosses(w)} \t {calculateScore(w, s)}\t{notes[w].getNote()}";
+            return $"{getPlacement(w)+1}. {printName}\t(ID:{ID})\t\t{getWins(w)}/{getLosses(w)} \t {calculateScore(w, s)}\t{getNote(w)}";
         }
     }
 }

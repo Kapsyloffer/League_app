@@ -1,12 +1,12 @@
-C:\Users\User\source\repos\League_2\League_2\bin\Debug\League_2.exe.config
-C:\Users\User\source\repos\League_2\League_2\bin\Debug\League_2.exe
-C:\Users\User\source\repos\League_2\League_2\bin\Debug\League_2.pdb
 C:\Users\User\source\repos\League_2\League_2\obj\Debug\League_2.csprojAssemblyReference.cache
 C:\Users\User\source\repos\League_2\League_2\obj\Debug\League_2.Properties.Resources.resources
 C:\Users\User\source\repos\League_2\League_2\obj\Debug\League_2.csproj.GenerateResource.cache
 C:\Users\User\source\repos\League_2\League_2\obj\Debug\League_2.csproj.CoreCompileInputs.cache
-C:\Users\User\source\repos\League_2\League_2\obj\Debug\League_2.exe
-C:\Users\User\source\repos\League_2\League_2\obj\Debug\League_2.pdb
 C:\Users\User\source\repos\League_2\League_2\obj\Debug\League_2.Form1.resources
 C:\Users\User\source\repos\League_2\League_2\obj\Debug\League_2.Player_Stats.resources
 C:\Users\User\source\repos\League_2\League_2\obj\Debug\League_2.Settings.resources
+C:\Users\User\source\repos\League_2\League_2\bin\Debug\League Scoreboard.exe.config
+C:\Users\User\source\repos\League_2\League_2\bin\Debug\League Scoreboard.exe
+C:\Users\User\source\repos\League_2\League_2\bin\Debug\League Scoreboard.pdb
+C:\Users\User\source\repos\League_2\League_2\obj\Debug\League Scoreboard.exe
+C:\Users\User\source\repos\League_2\League_2\obj\Debug\League Scoreboard.pdb

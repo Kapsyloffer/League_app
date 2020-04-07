@@ -15,11 +15,11 @@ namespace League_2
             this.content = c;
             this.w = w;
         }
-        public void setNote(String s)
+        public void setContent(String s)
         {
             this.content = s;
         }
-        public String getNote()
+        public String getContent()
         {
             return content;
         }

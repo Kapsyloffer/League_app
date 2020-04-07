@@ -67,10 +67,14 @@ namespace League_2
                     dM.loadFile();
                     return;
                 case ("viewProfile"):
-                    MessageBox.Show(sortList(dM.getPlayerList())[listBox1.SelectedIndex].getName());
+                    try
+                    {
                     Player_Stats curPlayer = new Player_Stats(sortList(dM.getPlayerList())[listBox1.SelectedIndex]);
                     curPlayer.Show();
                     curPlayer.Focus();
+                    }
+                    catch
+                    {}
                     return;
 
             }
@@ -89,7 +93,7 @@ namespace League_2
             return x;
         }
         //Updatera all data på UI:n
-        public void UpdateAll()
+        internal void UpdateAll()
         {
             UpdateListBox();
             UpdateComboBox();

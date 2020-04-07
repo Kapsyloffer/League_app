@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Player_Stats));
             this.playerName = new System.Windows.Forms.Label();
             this.gameHistory = new System.Windows.Forms.ListBox();
             this.label2 = new System.Windows.Forms.Label();
@@ -165,10 +166,12 @@
             this.addNote.TabIndex = 14;
             this.addNote.Text = "Add note (week x)";
             this.addNote.UseVisualStyleBackColor = true;
+            this.addNote.Click += new System.EventHandler(this.buttonPress);
             // 
             // textBox1
             // 
             this.textBox1.Location = new System.Drawing.Point(9, 280);
+            this.textBox1.MaxLength = 20;
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(250, 20);
             this.textBox1.TabIndex = 13;
@@ -256,6 +259,7 @@
             this.Controls.Add(this.weekLabel);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.playerName);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Player_Stats";
             this.Text = "Player_Stats";
             this.statGroup.ResumeLayout(false);
