@@ -23,14 +23,41 @@ namespace League_2
             this.lossPoints = 2;
             this.weeks = 3;
         }
-
+        public Settings(Settings s)
+        {
+            this.winPoints = s.getWinPoint();
+            this.lossPoints = s.getLossPoint();
+            this.weeks = s.getWeeks();
+        }
+        public void setWeeks(int w)
+        {
+            this.weeks = w;
+        }
+        public void setLossPoint(int l)
+        {
+            this.lossPoints = l;
+        }
+        public void setWinPoint(int w)
+        {
+            this.winPoints = w;
+        }
+        public int getWeeks()
+        {
+            return weeks;
+        }
         public int getLossPoint()
         {
             return lossPoints;
         }
         public int getWinPoint()
         {
-            return lossPoints;
+            return winPoints;
+        }
+
+        private void Settings_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            e.Cancel = true;
+            this.Hide();
         }
     }
 }

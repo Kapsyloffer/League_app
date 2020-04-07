@@ -48,6 +48,8 @@
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.viewProfileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.deletePlayerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.viewProfile = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -61,7 +63,7 @@
             this.openLatest.Name = "openLatest";
             this.openLatest.Size = new System.Drawing.Size(87, 39);
             this.openLatest.TabIndex = 0;
-            this.openLatest.Text = "Open Latest";
+            this.openLatest.Text = "Open latest";
             this.openLatest.UseVisualStyleBackColor = true;
             this.openLatest.Click += new System.EventHandler(this.buttonPress);
             // 
@@ -81,7 +83,7 @@
             this.saveFile.Name = "saveFile";
             this.saveFile.Size = new System.Drawing.Size(87, 39);
             this.saveFile.TabIndex = 3;
-            this.saveFile.Text = "Save File";
+            this.saveFile.Text = "Save file";
             this.saveFile.UseVisualStyleBackColor = true;
             this.saveFile.Click += new System.EventHandler(this.buttonPress);
             // 
@@ -91,7 +93,7 @@
             this.saveAs.Name = "saveAs";
             this.saveAs.Size = new System.Drawing.Size(87, 39);
             this.saveAs.TabIndex = 2;
-            this.saveAs.Text = "Save As...";
+            this.saveAs.Text = "Save as...";
             this.saveAs.UseVisualStyleBackColor = true;
             this.saveAs.Click += new System.EventHandler(this.buttonPress);
             // 
@@ -162,7 +164,7 @@
             this.addPlayer.Name = "addPlayer";
             this.addPlayer.Size = new System.Drawing.Size(87, 27);
             this.addPlayer.TabIndex = 9;
-            this.addPlayer.Text = "Add Player";
+            this.addPlayer.Text = "Add player";
             this.addPlayer.UseVisualStyleBackColor = true;
             this.addPlayer.Click += new System.EventHandler(this.buttonPress);
             // 
@@ -239,11 +241,33 @@
             this.deletePlayerToolStripMenuItem.Size = new System.Drawing.Size(145, 22);
             this.deletePlayerToolStripMenuItem.Text = "Delete player.";
             // 
+            // viewProfile
+            // 
+            this.viewProfile.Location = new System.Drawing.Point(16, 453);
+            this.viewProfile.Name = "viewProfile";
+            this.viewProfile.Size = new System.Drawing.Size(87, 39);
+            this.viewProfile.TabIndex = 13;
+            this.viewProfile.Text = "View profile";
+            this.viewProfile.UseVisualStyleBackColor = true;
+            this.viewProfile.Click += new System.EventHandler(this.buttonPress);
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(120, 453);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(87, 39);
+            this.button2.TabIndex = 12;
+            this.button2.Text = "Open Latest";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.buttonPress);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(847, 450);
+            this.ClientSize = new System.Drawing.Size(847, 514);
+            this.Controls.Add(this.viewProfile);
+            this.Controls.Add(this.button2);
             this.Controls.Add(this.openSettings);
             this.Controls.Add(this.placementBox);
             this.Controls.Add(this.groupBox3);
@@ -286,6 +310,8 @@
         private System.Windows.Forms.ToolStripMenuItem viewProfileToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem deletePlayerToolStripMenuItem;
         private System.Windows.Forms.ComboBox comboWeek;
+        private System.Windows.Forms.Button viewProfile;
+        private System.Windows.Forms.Button button2;
     }
 }
 

@@ -14,7 +14,7 @@ namespace League_2
         private List<Game> games = new List<Game>();
         private List<Note> notes = new List<Note>();
         private List<int> placement = new List<int>();
-        
+        //Ta emot namn och ID, then we let it all begin.
         public Player(String n, int ID)
         {
             this.name = n;
@@ -35,7 +35,6 @@ namespace League_2
             placementFailSafe(w);
             this.placement[w] = p;
         }
-
         public int getPlacement(int w)
         {
             placementFailSafe(w);
@@ -49,28 +48,24 @@ namespace League_2
         {
             return name;
         }
-
         public int getID()
         {
             return ID;
         }
-
         public void addRare(String s)
         {
             rares.Add(s);
         }
-
         public void addGame(Game g)
         {
             games.Add(g);
         }
-
         public List<Game> getGames()
         {
             return games;
         }
-
         //TODO: if w = 0, show for all games.
+        //Räkna wins för vecka w
         public int getWins(int w)
         {
             int wins = 0;
@@ -83,6 +78,7 @@ namespace League_2
             }
             return wins;
         }
+        //Räkna losses för vecka w
         public int getLosses(int w)
         {
             int losses = 0;
@@ -95,13 +91,13 @@ namespace League_2
             }
             return losses;
         }
-
+        //Räkna ut totalpoängen med alla wins och losses multiplicerat med respektive poäng.
         public int calculateScore(int w, Settings s)
         {
             //return score calculated using current settings & week
             return getWins(w) * s.getWinPoint() + getLosses(w) * s.getLossPoint();
         }
-
+        //Förbereder en print för Listboxen i Form 1
         public String Print(int w, Settings s)
         {
             String printName = name;

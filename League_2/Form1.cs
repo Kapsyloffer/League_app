@@ -13,13 +13,12 @@ namespace League_2
     public partial class Form1 : Form
     {
         //Här inne ligger all data.
-        private DataManager dM = new DataManager();
+        internal DataManager dM = new DataManager();
         public Form1()
         {
             InitializeComponent();
             UpdateAll();
         }
-        
         //Switch för varje button på Form1 UI:n
         private void buttonPress(object sender, EventArgs e)
         {
@@ -39,8 +38,9 @@ namespace League_2
                         MessageBox.Show("Please select different players.");
                         return;
                     }
-                    Player Winner = dM.getPlayerList()[comboWinner.SelectedIndex];
-                    Player Loser = dM.getPlayerList()[comboLoser.SelectedIndex];
+                    List<Player> sortedList = sortList(dM.getPlayerList());
+                    Player Winner = sortedList[comboWinner.SelectedIndex];
+                    Player Loser = sortedList[comboLoser.SelectedIndex];
                     foreach(Game game in Winner.getGames())
                     {
                         if(game.getWinner() == Winner && game.getLoser() == Loser || game.getWinner() == Loser && game.getLoser() == Winner)
@@ -56,8 +56,9 @@ namespace League_2
                     UpdateAll();
                     return;
                 case ("openSettings"):
-                    dM.getSettings().Show();
-                    dM.getSettings().Focus();
+                    Settings s = dM.getSettings();
+                    s.Show();
+                    s.Focus();
                     return;
                 case ("saveFile"):
                     dM.saveFile();
@@ -65,13 +66,21 @@ namespace League_2
                 case ("loadFile"):
                     dM.loadFile();
                     return;
+                case ("viewProfile"):
+                    MessageBox.Show(sortList(dM.getPlayerList())[listBox1.SelectedIndex].getName());
+                    Player_Stats curPlayer = new Player_Stats(sortList(dM.getPlayerList())[listBox1.SelectedIndex]);
+                    curPlayer.Show();
+                    curPlayer.Focus();
+                    return;
 
             }
         }
 
         //Sortera listan med players efter poäng. (calculateScore)
-        private List<Player> sortList(List<Player> p, int w, Settings s)
+        private List<Player> sortList(List<Player> p)
         {
+            int w = dM.getCurrentWeek();
+            Settings s = dM.getSettings();
             List<Player> x = p.OrderByDescending(z => z.calculateScore(w,s)).ToList();
             for(int i = 1; i<x.Count; i++)
             {
@@ -100,7 +109,7 @@ namespace League_2
         private void UpdateListBox()
         {
             listBox1.Items.Clear();
-            List<Player> sortedList = sortList(dM.getPlayerList(), dM.getCurrentWeek(), dM.getSettings());
+            List<Player> sortedList = sortList(dM.getPlayerList());
             foreach (Player p in sortedList)
             {
                 listBox1.Items.Add(p.Print(dM.getCurrentWeek(), dM.getSettings()));
@@ -135,7 +144,7 @@ namespace League_2
             }
 
             //Sort the list by score.
-            List<Player> sortedList = sortList(dM.getPlayerList(), dM.getCurrentWeek(), dM.getSettings());
+            List<Player> sortedList = sortList(dM.getPlayerList());
             //Add all players to the combobox
             foreach (Player p in sortedList)
             {

@@ -59,6 +59,7 @@
             this.Controls.Add(this.groupBox1);
             this.Name = "Settings";
             this.Text = "Settings";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Settings_FormClosing);
             this.ResumeLayout(false);
 
         }

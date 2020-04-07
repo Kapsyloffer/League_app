@@ -14,26 +14,38 @@ namespace League_2
     {
         private Player p;
         private int week;
-        public Player_Stats()
+        public Player_Stats(Player p)
         {
             InitializeComponent();
-        }
-        public Player_Stats(Player p, int w, Settings s)
-        {
             this.p = p;
-            this.week = w;
-            playerName.Text = p.getName();
-            winCount.Text = $"{p.getWins(w)}";
-            lossCount.Text = $"{p.getLosses(w)}";
-            totalScore.Text = $"{p.calculateScore(w, s)}";
-            //placement.Text = $"{p.getPlacement(w)}";
-
+            foreach (Game g in p.getGames())
+            {
+                gameHistory.Items.Add(g.print(p));
+            }
+            try
+            {
+                Form1 f = new Form1();
+                this.week = f.dM.getCurrentWeek();
+                weekLabel.Text = $"{week}      ";
+                playerName.Text = p.getName();
+                winCount.Text = $"{p.getWins(f.dM.getCurrentWeek())}";
+                lossCount.Text = $"{p.getLosses(f.dM.getCurrentWeek())}";
+                totalScore.Text = $"{p.calculateScore(f.dM.getCurrentWeek(), f.dM.getSettings())}";
+                placement.Text = $"{p.getPlacement(f.dM.getCurrentWeek()) + 1}";
+                addNote.Text = $"Add note (week {f.dM.getCurrentWeek()})";
+                f.Close();
+            }
+            catch
+            {
+                MessageBox.Show("There was an error loading this form. :(");
+            }
         }
         private void buttonPress(object sender, EventArgs e)
         {
             switch(((Button)sender).Name)
             {
-                case (""):
+                case ("addNote"):
+                    
                     return;
             }
         }

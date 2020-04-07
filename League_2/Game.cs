@@ -19,6 +19,17 @@ namespace League_2
             winner.addGame(this);
             loser.addGame(this);
         }
+        public String print(Player p)
+        {
+            if(p == winner)
+            {
+                return $"[W][ {week} ]: {loser.getName()}";
+            }
+            else
+            {
+                return $"[L][ {week} ]: {winner.getName()}";
+            }
+        }
         public Player getWinner()
         {
             return winner;
