@@ -103,9 +103,19 @@ namespace League_2
             int wins = 0;
             foreach (Game g in games)
             {
-                if (g.getWinner() == this && g.getWeek() == w)
+                if (w == 0)
                 {
-                    wins++;
+                    if (g.getWinner() == this)
+                    {
+                        wins++;
+                    }
+                }
+                else
+                {
+                    if (g.getWinner() == this && g.getWeek() == w)
+                    {
+                        wins++;
+                    }
                 }
             }
             return wins;
@@ -116,9 +126,19 @@ namespace League_2
             int losses = 0;
             foreach (Game g in games)
             {
-                if (g.getWinner() != this && g.getWeek() == w)
+                if(w == 0)
                 {
-                    losses++;
+                    if (g.getWinner() != this)
+                    {
+                        losses++;
+                    }
+                }
+                else
+                {
+                    if (g.getWinner() != this && g.getWeek() == w)
+                    {
+                        losses++;
+                    }
                 }
             }
             return losses;

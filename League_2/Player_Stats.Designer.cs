@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Player_Stats));
-            this.playerName = new System.Windows.Forms.Label();
             this.gameHistory = new System.Windows.Forms.ListBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -37,6 +36,12 @@
             this.lossCount = new System.Windows.Forms.Label();
             this.winCount = new System.Windows.Forms.Label();
             this.statGroup = new System.Windows.Forms.GroupBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.button3 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.listBox2 = new System.Windows.Forms.ListBox();
             this.label1 = new System.Windows.Forms.Label();
             this.addNote = new System.Windows.Forms.Button();
             this.textBox1 = new System.Windows.Forms.TextBox();
@@ -47,18 +52,14 @@
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
+            this.changeName = new System.Windows.Forms.Button();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.playerList = new System.Windows.Forms.ListBox();
+            this.label18 = new System.Windows.Forms.Label();
+            this.playerName = new System.Windows.Forms.TextBox();
             this.statGroup.SuspendLayout();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // playerName
-            // 
-            this.playerName.AutoSize = true;
-            this.playerName.Font = new System.Drawing.Font("Consolas", 20F);
-            this.playerName.Location = new System.Drawing.Point(16, 35);
-            this.playerName.Name = "playerName";
-            this.playerName.Size = new System.Drawing.Size(165, 32);
-            this.playerName.TabIndex = 0;
-            this.playerName.Text = "playerName";
             // 
             // gameHistory
             // 
@@ -66,7 +67,7 @@
             this.gameHistory.FormattingEnabled = true;
             this.gameHistory.Location = new System.Drawing.Point(9, 36);
             this.gameHistory.Name = "gameHistory";
-            this.gameHistory.Size = new System.Drawing.Size(250, 225);
+            this.gameHistory.Size = new System.Drawing.Size(229, 290);
             this.gameHistory.TabIndex = 1;
             // 
             // label2
@@ -94,7 +95,7 @@
             this.weekLabel.AutoSize = true;
             this.weekLabel.Font = new System.Drawing.Font("Arial", 32F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.weekLabel.ForeColor = System.Drawing.Color.DarkOrange;
-            this.weekLabel.Location = new System.Drawing.Point(389, 35);
+            this.weekLabel.Location = new System.Drawing.Point(657, 35);
             this.weekLabel.Name = "weekLabel";
             this.weekLabel.Size = new System.Drawing.Size(70, 49);
             this.weekLabel.TabIndex = 4;
@@ -106,7 +107,7 @@
             this.lossCount.AutoSize = true;
             this.lossCount.Font = new System.Drawing.Font("Arial", 32F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lossCount.ForeColor = System.Drawing.Color.DarkRed;
-            this.lossCount.Location = new System.Drawing.Point(376, 127);
+            this.lossCount.Location = new System.Drawing.Point(330, 344);
             this.lossCount.Name = "lossCount";
             this.lossCount.Size = new System.Drawing.Size(70, 49);
             this.lossCount.TabIndex = 5;
@@ -118,7 +119,7 @@
             this.winCount.AutoSize = true;
             this.winCount.Font = new System.Drawing.Font("Arial", 32F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.winCount.ForeColor = System.Drawing.Color.Green;
-            this.winCount.Location = new System.Drawing.Point(376, 56);
+            this.winCount.Location = new System.Drawing.Point(333, 281);
             this.winCount.Name = "winCount";
             this.winCount.Size = new System.Drawing.Size(70, 49);
             this.winCount.TabIndex = 6;
@@ -127,6 +128,12 @@
             // 
             // statGroup
             // 
+            this.statGroup.Controls.Add(this.label5);
+            this.statGroup.Controls.Add(this.button3);
+            this.statGroup.Controls.Add(this.button2);
+            this.statGroup.Controls.Add(this.button1);
+            this.statGroup.Controls.Add(this.textBox2);
+            this.statGroup.Controls.Add(this.listBox2);
             this.statGroup.Controls.Add(this.label1);
             this.statGroup.Controls.Add(this.addNote);
             this.statGroup.Controls.Add(this.textBox1);
@@ -142,16 +149,73 @@
             this.statGroup.Controls.Add(this.label2);
             this.statGroup.Location = new System.Drawing.Point(13, 84);
             this.statGroup.Name = "statGroup";
-            this.statGroup.Size = new System.Drawing.Size(452, 354);
+            this.statGroup.Size = new System.Drawing.Size(425, 425);
             this.statGroup.TabIndex = 7;
             this.statGroup.TabStop = false;
             this.statGroup.Text = "Stats";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Arial", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(246, 19);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(36, 14);
+            this.label5.TabIndex = 21;
+            this.label5.Text = "Rares";
+            // 
+            // button3
+            // 
+            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button3.Location = new System.Drawing.Point(249, 163);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(71, 28);
+            this.button3.TabIndex = 20;
+            this.button3.Text = "Add note (week x)";
+            this.button3.UseVisualStyleBackColor = true;
+            // 
+            // button2
+            // 
+            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button2.Location = new System.Drawing.Point(325, 163);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(71, 28);
+            this.button2.TabIndex = 19;
+            this.button2.Text = "Add note (week x)";
+            this.button2.UseVisualStyleBackColor = true;
+            // 
+            // button1
+            // 
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Location = new System.Drawing.Point(338, 234);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(71, 27);
+            this.button1.TabIndex = 18;
+            this.button1.Text = "Add rare";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
+            // textBox2
+            // 
+            this.textBox2.Location = new System.Drawing.Point(244, 208);
+            this.textBox2.MaxLength = 20;
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(165, 20);
+            this.textBox2.TabIndex = 17;
+            // 
+            // listBox2
+            // 
+            this.listBox2.Font = new System.Drawing.Font("Consolas", 8F);
+            this.listBox2.FormattingEnabled = true;
+            this.listBox2.Location = new System.Drawing.Point(244, 36);
+            this.listBox2.Name = "listBox2";
+            this.listBox2.Size = new System.Drawing.Size(165, 121);
+            this.listBox2.TabIndex = 16;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Arial", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(6, 264);
+            this.label1.Location = new System.Drawing.Point(6, 327);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(32, 14);
             this.label1.TabIndex = 15;
@@ -160,9 +224,9 @@
             // addNote
             // 
             this.addNote.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.addNote.Location = new System.Drawing.Point(144, 307);
+            this.addNote.Location = new System.Drawing.Point(133, 370);
             this.addNote.Name = "addNote";
-            this.addNote.Size = new System.Drawing.Size(114, 41);
+            this.addNote.Size = new System.Drawing.Size(105, 41);
             this.addNote.TabIndex = 14;
             this.addNote.Text = "Add note (week x)";
             this.addNote.UseVisualStyleBackColor = true;
@@ -170,17 +234,17 @@
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(9, 280);
+            this.textBox1.Location = new System.Drawing.Point(9, 344);
             this.textBox1.MaxLength = 20;
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(250, 20);
+            this.textBox1.Size = new System.Drawing.Size(230, 20);
             this.textBox1.TabIndex = 13;
             // 
             // totalScore
             // 
             this.totalScore.AutoSize = true;
             this.totalScore.Font = new System.Drawing.Font("Arial", 32F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.totalScore.Location = new System.Drawing.Point(274, 127);
+            this.totalScore.Location = new System.Drawing.Point(254, 344);
             this.totalScore.Name = "totalScore";
             this.totalScore.Size = new System.Drawing.Size(70, 49);
             this.totalScore.TabIndex = 12;
@@ -192,7 +256,7 @@
             this.placement.AutoSize = true;
             this.placement.Font = new System.Drawing.Font("Arial", 32F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.placement.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.placement.Location = new System.Drawing.Point(274, 56);
+            this.placement.Location = new System.Drawing.Point(254, 281);
             this.placement.Name = "placement";
             this.placement.Size = new System.Drawing.Size(70, 49);
             this.placement.TabIndex = 11;
@@ -203,7 +267,7 @@
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Arial", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(280, 113);
+            this.label9.Location = new System.Drawing.Point(260, 330);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(39, 14);
             this.label9.TabIndex = 10;
@@ -213,7 +277,7 @@
             // 
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Arial", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(280, 42);
+            this.label10.Location = new System.Drawing.Point(260, 267);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(56, 14);
             this.label10.TabIndex = 9;
@@ -223,7 +287,7 @@
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Arial", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(382, 113);
+            this.label8.Location = new System.Drawing.Point(336, 330);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(43, 14);
             this.label8.TabIndex = 8;
@@ -233,7 +297,7 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Arial", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(382, 42);
+            this.label7.Location = new System.Drawing.Point(339, 267);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(31, 14);
             this.label7.TabIndex = 7;
@@ -243,35 +307,89 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(395, 17);
+            this.label4.Location = new System.Drawing.Point(663, 17);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(53, 18);
             this.label4.TabIndex = 8;
             this.label4.Text = "Week:";
             // 
+            // changeName
+            // 
+            this.changeName.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.changeName.Location = new System.Drawing.Point(156, 16);
+            this.changeName.Name = "changeName";
+            this.changeName.Size = new System.Drawing.Size(94, 23);
+            this.changeName.TabIndex = 16;
+            this.changeName.Text = "Change name";
+            this.changeName.UseVisualStyleBackColor = true;
+            this.changeName.Click += new System.EventHandler(this.buttonPress);
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.playerList);
+            this.groupBox1.Controls.Add(this.label18);
+            this.groupBox1.Location = new System.Drawing.Point(444, 87);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(272, 425);
+            this.groupBox1.TabIndex = 16;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Players";
+            // 
+            // playerList
+            // 
+            this.playerList.Font = new System.Drawing.Font("Consolas", 8F);
+            this.playerList.FormattingEnabled = true;
+            this.playerList.Location = new System.Drawing.Point(6, 42);
+            this.playerList.Name = "playerList";
+            this.playerList.Size = new System.Drawing.Size(250, 368);
+            this.playerList.TabIndex = 1;
+            this.playerList.SelectedIndexChanged += new System.EventHandler(this.PlayerList_SelectedIndexChanged);
+            // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.Font = new System.Drawing.Font("Arial", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label18.Location = new System.Drawing.Point(3, 25);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(60, 14);
+            this.label18.TabIndex = 2;
+            this.label18.Text = "Player List:";
+            // 
+            // playerName
+            // 
+            this.playerName.Font = new System.Drawing.Font("Consolas", 20F);
+            this.playerName.Location = new System.Drawing.Point(13, 42);
+            this.playerName.MaxLength = 24;
+            this.playerName.Name = "playerName";
+            this.playerName.Size = new System.Drawing.Size(425, 39);
+            this.playerName.TabIndex = 22;
+            this.playerName.Text = "playerName";
+            // 
             // Player_Stats
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(477, 450);
+            this.ClientSize = new System.Drawing.Size(730, 529);
+            this.Controls.Add(this.playerName);
+            this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.changeName);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.statGroup);
-            this.Controls.Add(this.weekLabel);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.playerName);
+            this.Controls.Add(this.weekLabel);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Player_Stats";
             this.Text = "Player_Stats";
             this.statGroup.ResumeLayout(false);
             this.statGroup.PerformLayout();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.Label playerName;
         private System.Windows.Forms.ListBox gameHistory;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
@@ -289,5 +407,16 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Button changeName;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.ListBox listBox2;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.ListBox playerList;
+        private System.Windows.Forms.Label label18;
+        private System.Windows.Forms.TextBox playerName;
     }
 }

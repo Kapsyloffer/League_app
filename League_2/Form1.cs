@@ -29,6 +29,7 @@ namespace League_2
                     {
                         dM.addPlayer(nameBox.Text);
                         UpdateAll();
+                        nameBox.Focus();
                     }
                     return;
                 case ("addGame"):
@@ -189,6 +190,11 @@ namespace League_2
                 dM.setCurrentWeek(((ComboBox)sender).SelectedIndex);
                 UpdateAll();
             }
+        }
+        //Om vi fokuserar på fönstret, refresha.
+        private void Form1_Activated(object sender, EventArgs e)
+        {
+            UpdateListBox();
         }
     }
 }

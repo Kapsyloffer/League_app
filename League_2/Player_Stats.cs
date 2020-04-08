@@ -12,43 +12,72 @@ namespace League_2
 {
     internal partial class Player_Stats : Form
     {
-        private Player p;
+        private Player player;
         private int week;
+        private DataManager dM_new;
+        //Öppna med en spelare
         public Player_Stats(Player p)
         {
             InitializeComponent();
-            this.p = p;
+            this.player = p;
+            Form1 f = new Form1();
+            dM_new = f.dM;
+            f.Close();
             foreach (Game g in p.getGames())
             {
                 gameHistory.Items.Add(g.print(p));
             }
-            try
+            switchPlayer(player);
+        }
+        private void switchPlayer(Player p)
+        {
+            this.player = p;
+            this.week = dM_new.getCurrentWeek();
+            weekLabel.Text = $"{week}      ";
+            playerName.Text = player.getName();
+            winCount.Text = $"{player.getWins(dM_new.getCurrentWeek())}";
+            lossCount.Text = $"{player.getLosses(dM_new.getCurrentWeek())}";
+            totalScore.Text = $"{player.calculateScore(dM_new.getCurrentWeek(), dM_new.getSettings())}";
+            placement.Text = $"{player.getPlacement(dM_new.getCurrentWeek()) + 1}";
+            addNote.Text = $"Add note (week {dM_new.getCurrentWeek()})";
+            textBox1.Text = player.getNote(week);
+            playerList.Items.Clear();
+            foreach (Player pp in dM_new.getPlayerList())
             {
-                Form1 f = new Form1();
-                this.week = f.dM.getCurrentWeek();
-                weekLabel.Text = $"{week}      ";
-                playerName.Text = p.getName();
-                winCount.Text = $"{p.getWins(f.dM.getCurrentWeek())}";
-                lossCount.Text = $"{p.getLosses(f.dM.getCurrentWeek())}";
-                totalScore.Text = $"{p.calculateScore(f.dM.getCurrentWeek(), f.dM.getSettings())}";
-                placement.Text = $"{p.getPlacement(f.dM.getCurrentWeek()) + 1}";
-                addNote.Text = $"Add note (week {f.dM.getCurrentWeek()})";
-                textBox1.Text = p.getNote(week);
-                f.Close();
-            }
-            catch
-            {
-                MessageBox.Show("There was an error loading this form. :(");
+                playerList.Items.Add(pp.Print(dM_new.getCurrentWeek(), dM_new.getSettings()));
             }
         }
         private void buttonPress(object sender, EventArgs e)
         {
-            switch(((Button)sender).Name)
+            switch (((Button)sender).Name)
             {
                 case ("addNote"):
-                    p.setNote(textBox1.Text, week);
-                    textBox1.Clear();
+                    player.setNote(textBox1.Text, week);
+                    MessageBox.Show("Note added.");
                     return;
+                case ("changeName"):
+                    if (playerName.Text.Length >= 2)
+                    { 
+                        player.setName(playerName.Text);
+                        MessageBox.Show($"The name for ID:{player.getID()} has been changed to {player.getName()}!");
+                    }
+                    else
+                    {
+                        MessageBox.Show("The name you have selected is too short.");
+                    }
+                    return;
+            }
+        }
+
+        private void PlayerList_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                switchPlayer(dM_new.getPlayerList()[playerList.SelectedIndex]);
+            }
+            catch
+            {
+
             }
         }
     }
