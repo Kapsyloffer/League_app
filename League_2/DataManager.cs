@@ -2,23 +2,30 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
-using System.IO;
+
 //Håll all data här. Läs och skriv allt här.
 namespace League_2
 {
-    [Serializable]
     //Tillåter att klassen sparas och laddas.
+    [Serializable]
+    //DataManager håller i all viktig data. Till skillnad från det tidigare programmet som-
+    //Hade saves all over the place. Lättare att hålla koll på.
     class DataManager
     {
-        #region variables
         private List<Player> PlayerList = new List<Player>();
         private Settings LocalSettings = new Settings();
+        //Sparar nuvarande vecka för att förhindra förvirring on load. (feedback)
         private int currentWeek = 1;
-        private int maxWeeks = 3;
-        #endregion
 
+        //Lägg till en ny spelare i listan
+        public void addPlayer(String n)
+        {
+            Player p = new Player(n, PlayerList.Count);
+            PlayerList.Add(p);
+        }
        
+        //Getters och setters nedan
+        //Listan med spelare
         public List<Player> getPlayerList()
         {
             return PlayerList;
@@ -27,21 +34,18 @@ namespace League_2
         {
             this.PlayerList = pl;
         }
-        public void addPlayer(String n)
+        
+        //Inställningar
+        public Settings getSettings()
         {
-            Player p = new Player(n, PlayerList.Count);
-            PlayerList.Add(p);
+            return LocalSettings;
         }
         public void setSettings(Settings s)
         {
             this.LocalSettings = s;
         }
 
-        public Settings getSettings()
-        {
-            return LocalSettings;
-        }
-
+        //Veckor
         public int getCurrentWeek()
         {
             return currentWeek;
@@ -49,17 +53,17 @@ namespace League_2
         public void setCurrentWeek(int w)
         {
             currentWeek = w;
-            //System.Windows.Forms.MessageBox.Show($"Changed week to {w}");
-        }
-        public void setMaxWeeks(int m)
-        {
-            LocalSettings.setWeeks(m);
         }
         public int getMaxWeeks()
         {
             return LocalSettings.getWeeks();
         }
-
+        public void setMaxWeeks(int m)
+        {
+            LocalSettings.setWeeks(m);
+        }
+         
+        //Om en ny DataManager laddas in, sätt alla viktiga värden.
         public void setDM(DataManager nd)
         {
             this.setPlayerList(nd.getPlayerList());

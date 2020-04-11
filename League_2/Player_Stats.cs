@@ -22,10 +22,7 @@ namespace League_2
             InitializeComponent();
             this.player = p;
             this.dM_new = d;
-            foreach (Game g in p.getGames())
-            {
-                gameHistory.Items.Add(g.print(p));
-            }
+            refreshList();
             switchPlayer(player);
         }
         private void switchPlayer(Player p)
@@ -37,7 +34,7 @@ namespace League_2
             winCount.Text = $"{player.getWins(dM_new.getCurrentWeek())}";
             lossCount.Text = $"{player.getLosses(dM_new.getCurrentWeek())}";
             totalScore.Text = $"{player.calculateScore(dM_new.getCurrentWeek(), dM_new.getSettings())}";
-            placement.Text = $"{player.getPlacement(dM_new.getCurrentWeek()) + 1}";
+            placement.Text = $"{player.getPlacement(dM_new.getCurrentWeek())}";
             addNote.Text = $"Add note (week {dM_new.getCurrentWeek()})";
             textBox1.Text = player.getNote(week);
             playerList.Items.Clear();
@@ -54,10 +51,17 @@ namespace League_2
                     player.setNote(textBox1.Text, week);
                     MessageBox.Show("Note added.");
                     return;
+                case ("addRare"):
+                    player.addRare(rareInput.Text);
+                    rareInput.Clear();
+                    rareInput.Focus();
+                    refreshList();
+                    return;
                 case ("changeName"):
                     if (playerName.Text.Length >= 2)
                     { 
                         player.setName(playerName.Text);
+                        refreshList();
                         MessageBox.Show($"The name for ID:{player.getID()} has been changed to {player.getName()}!");
                     }
                     else
@@ -73,15 +77,30 @@ namespace League_2
             try
             {
                 switchPlayer(dM_new.getPlayerList()[playerList.SelectedIndex]);
-                playerList.Items.Clear();
-                foreach (Player pp in dM_new.getPlayerList())
-                {
-                    playerList.Items.Add(pp.Print(dM_new.getCurrentWeek(), dM_new.getSettings()));
-                }
+                refreshList();
             }
             catch
             {
                 //MessageBox.Show("Something went wrong. (switchPlayer(dM_new.getPlayerList()[playerList.SelectedIndex]);)");
+            }
+        }
+
+        private void refreshList()
+        {
+            playerList.Items.Clear();
+            rareList.Items.Clear();
+            gameHistory.Items.Clear();
+            foreach (Player pp in dM_new.getPlayerList())
+            {
+                playerList.Items.Add(pp.Print(dM_new.getCurrentWeek(), dM_new.getSettings()));
+            }
+            foreach(String rare in player.getRares())
+            {
+                rareList.Items.Add(rare);
+            }
+            foreach (Game g in player.getGames())
+            {
+                gameHistory.Items.Add(g.print(player));
             }
         }
     }

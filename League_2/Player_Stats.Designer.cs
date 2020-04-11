@@ -37,20 +37,20 @@
             this.winCount = new System.Windows.Forms.Label();
             this.statGroup = new System.Windows.Forms.GroupBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.lookup = new System.Windows.Forms.Button();
+            this.removeRare = new System.Windows.Forms.Button();
             this.addRare = new System.Windows.Forms.Button();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.rareBox = new System.Windows.Forms.ListBox();
+            this.rareInput = new System.Windows.Forms.TextBox();
+            this.rareList = new System.Windows.Forms.ListBox();
             this.label1 = new System.Windows.Forms.Label();
             this.addNote = new System.Windows.Forms.Button();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.totalScore = new System.Windows.Forms.Label();
-            this.placement = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
+            this.placement = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.changeName = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
@@ -129,11 +129,11 @@
             // statGroup
             // 
             this.statGroup.Controls.Add(this.label5);
-            this.statGroup.Controls.Add(this.button3);
-            this.statGroup.Controls.Add(this.button2);
+            this.statGroup.Controls.Add(this.lookup);
+            this.statGroup.Controls.Add(this.removeRare);
             this.statGroup.Controls.Add(this.addRare);
-            this.statGroup.Controls.Add(this.textBox2);
-            this.statGroup.Controls.Add(this.rareBox);
+            this.statGroup.Controls.Add(this.rareInput);
+            this.statGroup.Controls.Add(this.rareList);
             this.statGroup.Controls.Add(this.label1);
             this.statGroup.Controls.Add(this.addNote);
             this.statGroup.Controls.Add(this.textBox1);
@@ -162,30 +162,30 @@
             this.label5.TabIndex = 21;
             this.label5.Text = "Rares";
             // 
-            // button3
+            // lookup
             // 
-            this.button3.Enabled = false;
-            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F);
-            this.button3.Location = new System.Drawing.Point(329, 163);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(80, 39);
-            this.button3.TabIndex = 20;
-            this.button3.Text = "Lookup (scryfall)";
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.buttonPress);
+            this.lookup.Enabled = false;
+            this.lookup.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.lookup.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F);
+            this.lookup.Location = new System.Drawing.Point(329, 163);
+            this.lookup.Name = "lookup";
+            this.lookup.Size = new System.Drawing.Size(80, 39);
+            this.lookup.TabIndex = 20;
+            this.lookup.Text = "Lookup (scryfall)";
+            this.lookup.UseVisualStyleBackColor = true;
+            this.lookup.Click += new System.EventHandler(this.buttonPress);
             // 
-            // button2
+            // removeRare
             // 
-            this.button2.Enabled = false;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.button2.Location = new System.Drawing.Point(244, 163);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(80, 39);
-            this.button2.TabIndex = 19;
-            this.button2.Text = "Remove rare";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.buttonPress);
+            this.removeRare.Enabled = false;
+            this.removeRare.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.removeRare.Location = new System.Drawing.Point(244, 163);
+            this.removeRare.Name = "removeRare";
+            this.removeRare.Size = new System.Drawing.Size(80, 39);
+            this.removeRare.TabIndex = 19;
+            this.removeRare.Text = "Remove rare";
+            this.removeRare.UseVisualStyleBackColor = true;
+            this.removeRare.Click += new System.EventHandler(this.buttonPress);
             // 
             // addRare
             // 
@@ -198,22 +198,22 @@
             this.addRare.UseVisualStyleBackColor = true;
             this.addRare.Click += new System.EventHandler(this.buttonPress);
             // 
-            // textBox2
+            // rareInput
             // 
-            this.textBox2.Location = new System.Drawing.Point(244, 208);
-            this.textBox2.MaxLength = 20;
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(165, 20);
-            this.textBox2.TabIndex = 17;
+            this.rareInput.Location = new System.Drawing.Point(244, 208);
+            this.rareInput.MaxLength = 20;
+            this.rareInput.Name = "rareInput";
+            this.rareInput.Size = new System.Drawing.Size(165, 20);
+            this.rareInput.TabIndex = 17;
             // 
-            // rareBox
+            // rareList
             // 
-            this.rareBox.Font = new System.Drawing.Font("Consolas", 8F);
-            this.rareBox.FormattingEnabled = true;
-            this.rareBox.Location = new System.Drawing.Point(244, 36);
-            this.rareBox.Name = "rareBox";
-            this.rareBox.Size = new System.Drawing.Size(165, 121);
-            this.rareBox.TabIndex = 16;
+            this.rareList.Font = new System.Drawing.Font("Consolas", 8F);
+            this.rareList.FormattingEnabled = true;
+            this.rareList.Location = new System.Drawing.Point(244, 36);
+            this.rareList.Name = "rareList";
+            this.rareList.Size = new System.Drawing.Size(165, 121);
+            this.rareList.TabIndex = 16;
             // 
             // label1
             // 
@@ -255,18 +255,6 @@
             this.totalScore.Text = "99";
             this.totalScore.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // placement
-            // 
-            this.placement.AutoSize = true;
-            this.placement.Font = new System.Drawing.Font("Arial", 32F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.placement.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.placement.Location = new System.Drawing.Point(581, 35);
-            this.placement.Name = "placement";
-            this.placement.Size = new System.Drawing.Size(70, 49);
-            this.placement.TabIndex = 11;
-            this.placement.Text = "99";
-            this.placement.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
             // label9
             // 
             this.label9.AutoSize = true;
@@ -276,16 +264,6 @@
             this.label9.Size = new System.Drawing.Size(39, 14);
             this.label9.TabIndex = 10;
             this.label9.Text = "Score:";
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Arial", 12F);
-            this.label10.Location = new System.Drawing.Point(575, 16);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(86, 18);
-            this.label10.TabIndex = 9;
-            this.label10.Text = "Placement:";
             // 
             // label8
             // 
@@ -306,6 +284,28 @@
             this.label7.Size = new System.Drawing.Size(31, 14);
             this.label7.TabIndex = 7;
             this.label7.Text = "Wins";
+            // 
+            // placement
+            // 
+            this.placement.AutoSize = true;
+            this.placement.Font = new System.Drawing.Font("Arial", 32F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.placement.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.placement.Location = new System.Drawing.Point(581, 35);
+            this.placement.Name = "placement";
+            this.placement.Size = new System.Drawing.Size(70, 49);
+            this.placement.TabIndex = 11;
+            this.placement.Text = "99";
+            this.placement.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Arial", 12F);
+            this.label10.Location = new System.Drawing.Point(575, 16);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(86, 18);
+            this.label10.TabIndex = 9;
+            this.label10.Text = "Placement:";
             // 
             // label4
             // 
@@ -416,11 +416,11 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button changeName;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button lookup;
+        private System.Windows.Forms.Button removeRare;
         private System.Windows.Forms.Button addRare;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.ListBox rareBox;
+        private System.Windows.Forms.TextBox rareInput;
+        private System.Windows.Forms.ListBox rareList;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.ListBox playerList;
         private System.Windows.Forms.Label label18;

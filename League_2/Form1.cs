@@ -1,11 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace League_2
@@ -16,11 +12,14 @@ namespace League_2
         internal DataManager dM = new DataManager();
         //Denna sparar och laddar allt.
         private SaveLoad s_l = new SaveLoad();
+
+        //Konstruktorn; används inte förutom on start.
         public Form1()
         {
             InitializeComponent();
             UpdateAll();
         }
+        
         //Switch för varje button på Form1 UI:n
         private void buttonPress(object sender, EventArgs e)
         {
@@ -31,9 +30,10 @@ namespace League_2
                     {
                         dM.addPlayer(nameBox.Text);
                         UpdateAll();
-                        nameBox.Focus();
                     }
+                    nameBox.Focus();
                     return;
+                //Ett game är definierat som en match med en förlorare och en vinnare.
                 case ("addGame"):
                     //Checkar att allt är valid, och om de inte har spelat tidigare denna vecka så lägger vi till.
                     if(comboWinner.SelectedIndex== -1 || comboLoser.SelectedIndex == -1 || comboWinner.SelectedIndex == comboLoser.SelectedIndex)
@@ -41,9 +41,12 @@ namespace League_2
                         MessageBox.Show("Please select different players.");
                         return;
                     }
+                    //Sorterar listan enligt hur den är utskriven i comboboxarna och använder
+                    //sig av indexet för att ta spelarna. Funkar flawless hitills.
                     List<Player> sortedList = sortList(dM.getPlayerList());
                     Player Winner = sortedList[comboWinner.SelectedIndex];
                     Player Loser = sortedList[comboLoser.SelectedIndex];
+                    //Säkerhetskoll för att se om det finns dubletter per vecka.
                     foreach(Game game in Winner.getGames())
                     {
                         if(game.getWinner() == Winner && game.getLoser() == Loser || game.getWinner() == Loser && game.getLoser() == Winner)
@@ -63,6 +66,7 @@ namespace League_2
                     s.ShowDialog();
                     s.Focus();
                     return;
+                //Spara och ladda ligger i SaveLoad klassen.
                 case ("saveFile"):
                     s_l.saveFile(dM);
                     return;
@@ -76,8 +80,7 @@ namespace League_2
                     curPlayer.ShowDialog();
                     curPlayer.Focus();
                     }
-                    catch
-                    {}
+                    catch{}
                     return;
 
             }
@@ -91,6 +94,7 @@ namespace League_2
             List<Player> x = p.OrderByDescending(z => z.calculateScore(w,s)).ToList();
             return x;
         }
+        
         //Updatera all data på UI:n
         internal void UpdateAll()
         {
@@ -108,6 +112,7 @@ namespace League_2
                 placementBox.Text = $"Standings (Total)";
             }
         }
+        
         //Updaterar endast listboxes
         private void UpdateListBox()
         {
@@ -121,6 +126,7 @@ namespace League_2
                 positionCounter++;
             }
         }
+        
         //Updaterar endast comboboxes
         private void UpdateComboBox()
         {
@@ -192,6 +198,7 @@ namespace League_2
                 UpdateAll();
             }
         }
+       
         //Om vi fokuserar på fönstret, refresha.
         private void Form1_Activated(object sender, EventArgs e)
         {

@@ -12,6 +12,8 @@ namespace League_2
         private Player winner;
         private Player loser;
         private int week;
+
+        //Skapar ett objekt Game som innehåller vinnare, förlorare, och veckan matchen spelades.
         public Game(Player W, Player L, int week)
         {
             this.winner = W;
@@ -20,6 +22,7 @@ namespace League_2
             winner.addGame(this);
             loser.addGame(this);
         }
+        //Printar om win eller loss i Player_Stats.cs
         public String print(Player p)
         {
             if(p == winner)

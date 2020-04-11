@@ -89,6 +89,10 @@ namespace League_2
         {
             rares.Add(s);
         }
+        public List<String> getRares()
+        {
+            return rares;
+        }
         public void addGame(Game g)
         {
             games.Add(g);

@@ -1,14 +1,11 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace League_2
 {
     [Serializable]
     class Note
     {
+        //Tom sträng för att förhindra null-problemet.
         private String content = "";
         private int w;
         public Note(String c, int w)

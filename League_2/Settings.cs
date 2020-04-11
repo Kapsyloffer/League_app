@@ -19,12 +19,6 @@ namespace League_2
             this.lossPoints = 2;
             this.weeks = 3;
         }
-        public Settings(Settings s)
-        {
-            this.winPoints = s.getWinPoint();
-            this.lossPoints = s.getLossPoint();
-            this.weeks = s.getWeeks();
-        }
         public void setWeeks(int w)
         {
             this.weeks = w;
