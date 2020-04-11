@@ -39,9 +39,9 @@
             this.label5 = new System.Windows.Forms.Label();
             this.button3 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.addRare = new System.Windows.Forms.Button();
             this.textBox2 = new System.Windows.Forms.TextBox();
-            this.listBox2 = new System.Windows.Forms.ListBox();
+            this.rareBox = new System.Windows.Forms.ListBox();
             this.label1 = new System.Windows.Forms.Label();
             this.addNote = new System.Windows.Forms.Button();
             this.textBox1 = new System.Windows.Forms.TextBox();
@@ -107,7 +107,7 @@
             this.lossCount.AutoSize = true;
             this.lossCount.Font = new System.Drawing.Font("Arial", 32F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lossCount.ForeColor = System.Drawing.Color.DarkRed;
-            this.lossCount.Location = new System.Drawing.Point(330, 344);
+            this.lossCount.Location = new System.Drawing.Point(324, 278);
             this.lossCount.Name = "lossCount";
             this.lossCount.Size = new System.Drawing.Size(70, 49);
             this.lossCount.TabIndex = 5;
@@ -119,7 +119,7 @@
             this.winCount.AutoSize = true;
             this.winCount.Font = new System.Drawing.Font("Arial", 32F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.winCount.ForeColor = System.Drawing.Color.Green;
-            this.winCount.Location = new System.Drawing.Point(333, 281);
+            this.winCount.Location = new System.Drawing.Point(254, 278);
             this.winCount.Name = "winCount";
             this.winCount.Size = new System.Drawing.Size(70, 49);
             this.winCount.TabIndex = 6;
@@ -131,16 +131,14 @@
             this.statGroup.Controls.Add(this.label5);
             this.statGroup.Controls.Add(this.button3);
             this.statGroup.Controls.Add(this.button2);
-            this.statGroup.Controls.Add(this.button1);
+            this.statGroup.Controls.Add(this.addRare);
             this.statGroup.Controls.Add(this.textBox2);
-            this.statGroup.Controls.Add(this.listBox2);
+            this.statGroup.Controls.Add(this.rareBox);
             this.statGroup.Controls.Add(this.label1);
             this.statGroup.Controls.Add(this.addNote);
             this.statGroup.Controls.Add(this.textBox1);
             this.statGroup.Controls.Add(this.totalScore);
-            this.statGroup.Controls.Add(this.placement);
             this.statGroup.Controls.Add(this.label9);
-            this.statGroup.Controls.Add(this.label10);
             this.statGroup.Controls.Add(this.label8);
             this.statGroup.Controls.Add(this.label7);
             this.statGroup.Controls.Add(this.gameHistory);
@@ -166,33 +164,39 @@
             // 
             // button3
             // 
-            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button3.Location = new System.Drawing.Point(249, 163);
+            this.button3.Enabled = false;
+            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F);
+            this.button3.Location = new System.Drawing.Point(329, 163);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(71, 28);
+            this.button3.Size = new System.Drawing.Size(80, 39);
             this.button3.TabIndex = 20;
-            this.button3.Text = "Add note (week x)";
+            this.button3.Text = "Lookup (scryfall)";
             this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.buttonPress);
             // 
             // button2
             // 
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Location = new System.Drawing.Point(325, 163);
+            this.button2.Enabled = false;
+            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.button2.Location = new System.Drawing.Point(244, 163);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(71, 28);
+            this.button2.Size = new System.Drawing.Size(80, 39);
             this.button2.TabIndex = 19;
-            this.button2.Text = "Add note (week x)";
+            this.button2.Text = "Remove rare";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.buttonPress);
             // 
-            // button1
+            // addRare
             // 
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Location = new System.Drawing.Point(338, 234);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(71, 27);
-            this.button1.TabIndex = 18;
-            this.button1.Text = "Add rare";
-            this.button1.UseVisualStyleBackColor = true;
+            this.addRare.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.addRare.Location = new System.Drawing.Point(338, 234);
+            this.addRare.Name = "addRare";
+            this.addRare.Size = new System.Drawing.Size(71, 27);
+            this.addRare.TabIndex = 18;
+            this.addRare.Text = "Add rare";
+            this.addRare.UseVisualStyleBackColor = true;
+            this.addRare.Click += new System.EventHandler(this.buttonPress);
             // 
             // textBox2
             // 
@@ -202,14 +206,14 @@
             this.textBox2.Size = new System.Drawing.Size(165, 20);
             this.textBox2.TabIndex = 17;
             // 
-            // listBox2
+            // rareBox
             // 
-            this.listBox2.Font = new System.Drawing.Font("Consolas", 8F);
-            this.listBox2.FormattingEnabled = true;
-            this.listBox2.Location = new System.Drawing.Point(244, 36);
-            this.listBox2.Name = "listBox2";
-            this.listBox2.Size = new System.Drawing.Size(165, 121);
-            this.listBox2.TabIndex = 16;
+            this.rareBox.Font = new System.Drawing.Font("Consolas", 8F);
+            this.rareBox.FormattingEnabled = true;
+            this.rareBox.Location = new System.Drawing.Point(244, 36);
+            this.rareBox.Name = "rareBox";
+            this.rareBox.Size = new System.Drawing.Size(165, 121);
+            this.rareBox.TabIndex = 16;
             // 
             // label1
             // 
@@ -256,7 +260,7 @@
             this.placement.AutoSize = true;
             this.placement.Font = new System.Drawing.Font("Arial", 32F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.placement.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.placement.Location = new System.Drawing.Point(254, 281);
+            this.placement.Location = new System.Drawing.Point(581, 35);
             this.placement.Name = "placement";
             this.placement.Size = new System.Drawing.Size(70, 49);
             this.placement.TabIndex = 11;
@@ -276,18 +280,18 @@
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Arial", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(260, 267);
+            this.label10.Font = new System.Drawing.Font("Arial", 12F);
+            this.label10.Location = new System.Drawing.Point(575, 16);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(56, 14);
+            this.label10.Size = new System.Drawing.Size(86, 18);
             this.label10.TabIndex = 9;
-            this.label10.Text = "Placement";
+            this.label10.Text = "Placement:";
             // 
             // label8
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Arial", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(336, 330);
+            this.label8.Location = new System.Drawing.Point(330, 264);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(43, 14);
             this.label8.TabIndex = 8;
@@ -297,7 +301,7 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Arial", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(339, 267);
+            this.label7.Location = new System.Drawing.Point(260, 264);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(31, 14);
             this.label7.TabIndex = 7;
@@ -377,9 +381,12 @@
             this.Controls.Add(this.statGroup);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.weekLabel);
+            this.Controls.Add(this.label10);
+            this.Controls.Add(this.placement);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Player_Stats";
-            this.Text = "Player_Stats";
+            this.Text = "Player stats";
             this.statGroup.ResumeLayout(false);
             this.statGroup.PerformLayout();
             this.groupBox1.ResumeLayout(false);
@@ -411,9 +418,9 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button addRare;
         private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.ListBox listBox2;
+        private System.Windows.Forms.ListBox rareBox;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.ListBox playerList;
         private System.Windows.Forms.Label label18;

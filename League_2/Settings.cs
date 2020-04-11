@@ -14,7 +14,6 @@ namespace League_2
         private int weeks;
         public Settings()
         {
-            //InitializeComponent();
             //set default values
             this.winPoints = 3;
             this.lossPoints = 2;
@@ -50,12 +49,6 @@ namespace League_2
         {
             return winPoints;
         }
-
-       /* private void Settings_FormClosing(object sender, FormClosingEventArgs e)
-        {
-            e.Cancel = true;
-            this.Hide();
-        }*/
     }
 }
 

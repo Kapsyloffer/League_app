@@ -9,3 +9,4 @@ C:\Users\User\source\repos\League_2\League_2\bin\Debug\League Scoreboard.exe
 C:\Users\User\source\repos\League_2\League_2\bin\Debug\League Scoreboard.pdb
 C:\Users\User\source\repos\League_2\League_2\obj\Debug\League Scoreboard.exe
 C:\Users\User\source\repos\League_2\League_2\obj\Debug\League Scoreboard.pdb
+C:\Users\User\source\repos\League_2\League_2\obj\Debug\League_2.SettingsUI.resources

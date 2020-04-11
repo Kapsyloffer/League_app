@@ -53,11 +53,11 @@ namespace League_2
         }
         public void setMaxWeeks(int m)
         {
-            this.maxWeeks = m;
+            LocalSettings.setWeeks(m);
         }
         public int getMaxWeeks()
         {
-            return maxWeeks;
+            return LocalSettings.getWeeks();
         }
 
         public void setDM(DataManager nd)

@@ -65,6 +65,8 @@
             // 
             // openLatest
             // 
+            this.openLatest.Enabled = false;
+            this.openLatest.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.openLatest.Location = new System.Drawing.Point(730, 345);
             this.openLatest.Name = "openLatest";
             this.openLatest.Size = new System.Drawing.Size(87, 39);
@@ -75,6 +77,7 @@
             // 
             // openFile
             // 
+            this.openFile.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.openFile.Location = new System.Drawing.Point(626, 345);
             this.openFile.Name = "openFile";
             this.openFile.Size = new System.Drawing.Size(87, 39);
@@ -85,6 +88,7 @@
             // 
             // saveFile
             // 
+            this.saveFile.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.saveFile.Location = new System.Drawing.Point(626, 395);
             this.saveFile.Name = "saveFile";
             this.saveFile.Size = new System.Drawing.Size(87, 39);
@@ -95,6 +99,8 @@
             // 
             // saveAs
             // 
+            this.saveAs.Enabled = false;
+            this.saveAs.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.saveAs.Location = new System.Drawing.Point(730, 395);
             this.saveAs.Name = "saveAs";
             this.saveAs.Size = new System.Drawing.Size(87, 39);
@@ -117,6 +123,7 @@
             // 
             // addGame
             // 
+            this.addGame.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.addGame.Location = new System.Drawing.Point(104, 102);
             this.addGame.Name = "addGame";
             this.addGame.Size = new System.Drawing.Size(87, 27);
@@ -166,6 +173,7 @@
             // 
             // addPlayer
             // 
+            this.addPlayer.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.addPlayer.Location = new System.Drawing.Point(104, 66);
             this.addPlayer.Name = "addPlayer";
             this.addPlayer.Size = new System.Drawing.Size(87, 27);
@@ -277,6 +285,7 @@
             // 
             // openSettings
             // 
+            this.openSettings.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.openSettings.Location = new System.Drawing.Point(754, 20);
             this.openSettings.Name = "openSettings";
             this.openSettings.Size = new System.Drawing.Size(81, 40);
@@ -307,6 +316,7 @@
             // 
             // viewProfile
             // 
+            this.viewProfile.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.viewProfile.Location = new System.Drawing.Point(16, 453);
             this.viewProfile.Name = "viewProfile";
             this.viewProfile.Size = new System.Drawing.Size(87, 39);
@@ -330,9 +340,10 @@
             this.Controls.Add(this.saveAs);
             this.Controls.Add(this.openFile);
             this.Controls.Add(this.openLatest);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Form1";
-            this.Text = "League_improved";
+            this.Text = "League Project";
             this.Activated += new System.EventHandler(this.Form1_Activated);
             this.groupBox1.ResumeLayout(false);
             this.groupBox2.ResumeLayout(false);

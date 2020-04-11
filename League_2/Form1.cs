@@ -13,7 +13,7 @@ namespace League_2
     public partial class Form1 : Form
     {
         //Här inne ligger all data.
-        private DataManager dM = new DataManager();
+        internal DataManager dM = new DataManager();
         //Denna sparar och laddar allt.
         private SaveLoad s_l = new SaveLoad();
         public Form1()
@@ -59,9 +59,9 @@ namespace League_2
                     UpdateAll();
                     return;
                 case ("openSettings"):
-                    /*Settings s = dM.getSettings();
+                    SettingsUI s = new SettingsUI(dM);
                     s.ShowDialog();
-                    s.Focus();*/
+                    s.Focus();
                     return;
                 case ("saveFile"):
                     s_l.saveFile(dM);
