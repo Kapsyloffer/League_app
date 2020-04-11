@@ -13,7 +13,9 @@ namespace League_2
     public partial class Form1 : Form
     {
         //Här inne ligger all data.
-        internal DataManager dM = new DataManager();
+        private DataManager dM = new DataManager();
+        //Denna sparar och laddar allt.
+        private SaveLoad s_l = new SaveLoad();
         public Form1()
         {
             InitializeComponent();
@@ -57,21 +59,21 @@ namespace League_2
                     UpdateAll();
                     return;
                 case ("openSettings"):
-                    Settings s = dM.getSettings();
-                    s.Show();
-                    s.Focus();
+                    /*Settings s = dM.getSettings();
+                    s.ShowDialog();
+                    s.Focus();*/
                     return;
                 case ("saveFile"):
-                    dM.saveFile();
+                    s_l.saveFile(dM);
                     return;
-                case ("loadFile"):
-                    dM.loadFile();
+                case ("openFile"):
+                    s_l.openFile(dM);
                     return;
                 case ("viewProfile"):
                     try
                     {
-                    Player_Stats curPlayer = new Player_Stats(sortList(dM.getPlayerList())[listBox1.SelectedIndex]);
-                    curPlayer.Show();
+                    Player_Stats curPlayer = new Player_Stats(sortList(dM.getPlayerList())[listBox1.SelectedIndex], dM);
+                    curPlayer.ShowDialog();
                     curPlayer.Focus();
                     }
                     catch
@@ -87,10 +89,6 @@ namespace League_2
             int w = dM.getCurrentWeek();
             Settings s = dM.getSettings();
             List<Player> x = p.OrderByDescending(z => z.calculateScore(w,s)).ToList();
-            for(int i = 1; i<x.Count; i++)
-            {
-                x[i].setPlacement(i, w);
-            }
             return x;
         }
         //Updatera all data på UI:n
@@ -115,9 +113,12 @@ namespace League_2
         {
             listBox1.Items.Clear();
             List<Player> sortedList = sortList(dM.getPlayerList());
+            int positionCounter = 1;
             foreach (Player p in sortedList)
             {
+                p.setPlacement(positionCounter, dM.getCurrentWeek());
                 listBox1.Items.Add(p.Print(dM.getCurrentWeek(), dM.getSettings()));
+                positionCounter++;
             }
         }
         //Updaterar endast comboboxes
@@ -194,7 +195,7 @@ namespace League_2
         //Om vi fokuserar på fönstret, refresha.
         private void Form1_Activated(object sender, EventArgs e)
         {
-            UpdateListBox();
+            UpdateAll();
         }
     }
 }

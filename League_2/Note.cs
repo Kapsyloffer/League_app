@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace League_2
 {
+    [Serializable]
     class Note
     {
         private String content = "";

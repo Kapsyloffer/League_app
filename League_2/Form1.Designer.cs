@@ -56,7 +56,6 @@
             this.viewProfileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.deletePlayerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.viewProfile = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -316,23 +315,12 @@
             this.viewProfile.UseVisualStyleBackColor = true;
             this.viewProfile.Click += new System.EventHandler(this.buttonPress);
             // 
-            // button2
-            // 
-            this.button2.Location = new System.Drawing.Point(120, 453);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(87, 39);
-            this.button2.TabIndex = 12;
-            this.button2.Text = "Open Latest";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.buttonPress);
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(847, 514);
             this.Controls.Add(this.viewProfile);
-            this.Controls.Add(this.button2);
             this.Controls.Add(this.openSettings);
             this.Controls.Add(this.placementBox);
             this.Controls.Add(this.groupBox3);
@@ -379,7 +367,6 @@
         private System.Windows.Forms.ToolStripMenuItem deletePlayerToolStripMenuItem;
         private System.Windows.Forms.ComboBox comboWeek;
         private System.Windows.Forms.Button viewProfile;
-        private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;

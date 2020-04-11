@@ -1,23 +1,20 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Windows.Forms;
 
 namespace League_2
 {
-    public partial class Settings : Form
+    [Serializable]
+    class Settings
     {
         private int winPoints;
         private int lossPoints;
         private int weeks;
         public Settings()
         {
-            InitializeComponent();
+            //InitializeComponent();
             //set default values
             this.winPoints = 3;
             this.lossPoints = 2;
@@ -54,10 +51,11 @@ namespace League_2
             return winPoints;
         }
 
-        private void Settings_FormClosing(object sender, FormClosingEventArgs e)
+       /* private void Settings_FormClosing(object sender, FormClosingEventArgs e)
         {
             e.Cancel = true;
             this.Hide();
-        }
+        }*/
     }
 }
+

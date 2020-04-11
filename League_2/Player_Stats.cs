@@ -10,19 +10,18 @@ using System.Windows.Forms;
 
 namespace League_2
 {
+    [Serializable]
     internal partial class Player_Stats : Form
     {
         private Player player;
         private int week;
         private DataManager dM_new;
         //Öppna med en spelare
-        public Player_Stats(Player p)
+        public Player_Stats(Player p, DataManager d)
         {
             InitializeComponent();
             this.player = p;
-            Form1 f = new Form1();
-            dM_new = f.dM;
-            f.Close();
+            this.dM_new = d;
             foreach (Game g in p.getGames())
             {
                 gameHistory.Items.Add(g.print(p));
@@ -74,10 +73,15 @@ namespace League_2
             try
             {
                 switchPlayer(dM_new.getPlayerList()[playerList.SelectedIndex]);
+                playerList.Items.Clear();
+                foreach (Player pp in dM_new.getPlayerList())
+                {
+                    playerList.Items.Add(pp.Print(dM_new.getCurrentWeek(), dM_new.getSettings()));
+                }
             }
             catch
             {
-
+                //MessageBox.Show("Something went wrong. (switchPlayer(dM_new.getPlayerList()[playerList.SelectedIndex]);)");
             }
         }
     }

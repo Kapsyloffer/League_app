@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace League_2
 {
+    [Serializable]
     class Player
     {
         private String name;
@@ -158,7 +159,7 @@ namespace League_2
             {
                 printName += " ";
             }
-            return $"{getPlacement(w)+1}. {printName}\t(ID:{ID})\t\t{getWins(w)}/{getLosses(w)} \t {calculateScore(w, s)}\t{getNote(w)}";
+            return $"{getPlacement(w)}. {printName}\t(ID:{ID})\t\t{getWins(w)}/{getLosses(w)} \t {calculateScore(w, s)}\t{getNote(w)}";
         }
     }
 }

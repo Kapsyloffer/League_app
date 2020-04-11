@@ -4,7 +4,6 @@ C:\Users\User\source\repos\League_2\League_2\obj\Debug\League_2.csproj.GenerateR
 C:\Users\User\source\repos\League_2\League_2\obj\Debug\League_2.csproj.CoreCompileInputs.cache
 C:\Users\User\source\repos\League_2\League_2\obj\Debug\League_2.Form1.resources
 C:\Users\User\source\repos\League_2\League_2\obj\Debug\League_2.Player_Stats.resources
-C:\Users\User\source\repos\League_2\League_2\obj\Debug\League_2.Settings.resources
 C:\Users\User\source\repos\League_2\League_2\bin\Debug\League Scoreboard.exe.config
 C:\Users\User\source\repos\League_2\League_2\bin\Debug\League Scoreboard.exe
 C:\Users\User\source\repos\League_2\League_2\bin\Debug\League Scoreboard.pdb
