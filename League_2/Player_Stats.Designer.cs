@@ -368,6 +368,7 @@
             this.playerName.Size = new System.Drawing.Size(425, 39);
             this.playerName.TabIndex = 22;
             this.playerName.Text = "playerName";
+            this.playerName.KeyDown += new System.Windows.Forms.KeyEventHandler(this.NameBox_TextChanged);
             // 
             // Player_Stats
             // 

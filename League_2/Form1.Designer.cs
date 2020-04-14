@@ -170,6 +170,7 @@
             this.nameBox.Name = "nameBox";
             this.nameBox.Size = new System.Drawing.Size(185, 20);
             this.nameBox.TabIndex = 10;
+            this.nameBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.NameBox_TextChanged);
             // 
             // addPlayer
             // 

@@ -10,6 +10,8 @@ namespace League_2
 {
     class SaveLoad
     {
+        //Default path.
+        //TODO: Make changable.
         private String filePath = "C:\\Users\\User\\save.save";
         public void saveFile(DataManager d)
         {

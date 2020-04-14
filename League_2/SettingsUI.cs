@@ -41,6 +41,8 @@ namespace League_2
             s.setWinPoint((int)winPoint.Value);
             s.setLossPoint((int)lossPoint.Value);
             s.setWeeks((int)maxWeeks.Value);
+            MessageBox.Show("Settings saved successfully!");
+            this.Close();
         }
     }
 }

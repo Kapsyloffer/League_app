@@ -31,32 +31,35 @@ namespace League_2
             this.week = dM_new.getCurrentWeek();
             weekLabel.Text = $"{week}      ";
             playerName.Text = player.getName();
-            winCount.Text = $"{player.getWins(dM_new.getCurrentWeek())}";
-            lossCount.Text = $"{player.getLosses(dM_new.getCurrentWeek())}";
-            totalScore.Text = $"{player.calculateScore(dM_new.getCurrentWeek(), dM_new.getSettings())}";
-            placement.Text = $"{player.getPlacement(dM_new.getCurrentWeek())}";
+            winCount.Text = $"{player.getWins(dM_new)}";
+            lossCount.Text = $"{player.getLosses(dM_new)}";
+            totalScore.Text = $"{player.calculateScore(dM_new)}";
+            placement.Text = $"{player.getPlacement(dM_new)}";
             addNote.Text = $"Add note (week {dM_new.getCurrentWeek()})";
             textBox1.Text = player.getNote(week);
             playerList.Items.Clear();
             foreach (Player pp in dM_new.getPlayerList())
             {
-                playerList.Items.Add(pp.Print(dM_new.getCurrentWeek(), dM_new.getSettings()));
+                playerList.Items.Add(pp.Print(dM_new));
             }
         }
         private void buttonPress(object sender, EventArgs e)
         {
             switch (((Button)sender).Name)
             {
+                //If a note is added on that week.
                 case ("addNote"):
                     player.setNote(textBox1.Text, week);
                     MessageBox.Show("Note added.");
                     return;
+                //If a rare (Magic the gathering) is added.
                 case ("addRare"):
                     player.addRare(rareInput.Text);
                     rareInput.Clear();
                     rareInput.Focus();
                     refreshList();
                     return;
+                //Change the name on the selected player.
                 case ("changeName"):
                     if (playerName.Text.Length >= 2)
                     { 
@@ -79,20 +82,20 @@ namespace League_2
                 switchPlayer(dM_new.getPlayerList()[playerList.SelectedIndex]);
                 refreshList();
             }
-            catch
-            {
-                //MessageBox.Show("Something went wrong. (switchPlayer(dM_new.getPlayerList()[playerList.SelectedIndex]);)");
-            }
+            catch{}
         }
 
+        //Refresh everything on screen.
         private void refreshList()
         {
+            //Clear all
             playerList.Items.Clear();
             rareList.Items.Clear();
             gameHistory.Items.Clear();
+            //Set all
             foreach (Player pp in dM_new.getPlayerList())
             {
-                playerList.Items.Add(pp.Print(dM_new.getCurrentWeek(), dM_new.getSettings()));
+                playerList.Items.Add(pp.Print(dM_new));
             }
             foreach(String rare in player.getRares())
             {
@@ -101,6 +104,16 @@ namespace League_2
             foreach (Game g in player.getGames())
             {
                 gameHistory.Items.Add(g.print(player));
+            }
+        }
+
+        private void NameBox_TextChanged(object sender, KeyEventArgs e)
+        {
+            //Om vi trycker enter i textboxen, lägg till spelare.
+            if (e.KeyCode == Keys.Enter)
+            {
+                changeName.PerformClick();
+                e.SuppressKeyPress = true;
             }
         }
     }

@@ -59,10 +59,10 @@ namespace League_2
             placementFailSafe(w);
             this.placement[w] = p;
         }
-        public int getPlacement(int w)
+        public int getPlacement(DataManager dm)
         {
-            placementFailSafe(w);
-            return placement[w];
+            placementFailSafe(dm.getCurrentWeek());
+            return placement[dm.getCurrentWeek()];
         }
         public String getNote(int w)
         {
@@ -103,21 +103,21 @@ namespace League_2
         }
         //TODO: if w = 0, show for all games.
         //Räkna wins för vecka w
-        public int getWins(int w)
+        public int getWins(DataManager dm)
         {
             int wins = 0;
             foreach (Game g in games)
             {
-                if (w == 0)
+                if (dm.getCurrentWeek() == 0)
                 {
-                    if (g.getWinner() == this)
+                    if (g.getWinner() == this && g.getWeek() <= dm.getMaxWeeks())
                     {
                         wins++;
                     }
                 }
                 else
                 {
-                    if (g.getWinner() == this && g.getWeek() == w)
+                    if (g.getWinner() == this && g.getWeek() == dm.getCurrentWeek())
                     {
                         wins++;
                     }
@@ -126,21 +126,21 @@ namespace League_2
             return wins;
         }
         //Räkna losses för vecka w
-        public int getLosses(int w)
+        public int getLosses(DataManager dm)
         {
             int losses = 0;
             foreach (Game g in games)
             {
-                if(w == 0)
+                if(dm.getCurrentWeek() == 0)
                 {
-                    if (g.getWinner() != this)
+                    if (g.getWinner() != this && g.getWeek() <= dm.getMaxWeeks())
                     {
                         losses++;
                     }
                 }
                 else
                 {
-                    if (g.getWinner() != this && g.getWeek() == w)
+                    if (g.getWinner() != this && g.getWeek() == dm.getCurrentWeek())
                     {
                         losses++;
                     }
@@ -149,21 +149,21 @@ namespace League_2
             return losses;
         }
         //Räkna ut totalpoängen med alla wins och losses multiplicerat med respektive poäng.
-        public int calculateScore(int w, Settings s)
+        public int calculateScore(DataManager dm)
         {
             //return score calculated using current settings & week
-            return getWins(w) * s.getWinPoint() + getLosses(w) * s.getLossPoint();
+            return getWins(dm) * dm.getSettings().getWinPoint() + getLosses(dm) * dm.getSettings().getLossPoint();
         }
         //Förbereder en print för Listboxen i Form 1
-        public String Print(int w, Settings s)
+        public String Print(DataManager dm)
         {
             String printName = name;
-            noteFailSafe(w);
+            noteFailSafe(dm.getCurrentWeek());
             for (int i = printName.Count(); i <= 26; i++)
             {
                 printName += " ";
             }
-            return $"{getPlacement(w)}. {printName}\t(ID:{ID})\t\t{getWins(w)}/{getLosses(w)} \t {calculateScore(w, s)}\t{getNote(w)}";
+            return $"{getPlacement(dm)}. {printName}\t(ID:{ID})\t\t{getWins(dm)}/{getLosses(dm)} \t {calculateScore(dm)}\t{getNote(dm.getCurrentWeek())}";
         }
     }
 }

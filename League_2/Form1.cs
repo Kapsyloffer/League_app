@@ -11,7 +11,7 @@ namespace League_2
         //Här inne ligger all data.
         internal DataManager dM = new DataManager();
         //Denna sparar och laddar allt.
-        private SaveLoad s_l = new SaveLoad();
+        private SaveLoad sL = new SaveLoad();
 
         //Konstruktorn; används inte förutom on start.
         public Form1()
@@ -68,10 +68,10 @@ namespace League_2
                     return;
                 //Spara och ladda ligger i SaveLoad klassen.
                 case ("saveFile"):
-                    s_l.saveFile(dM);
+                    sL.saveFile(dM);
                     return;
                 case ("openFile"):
-                    s_l.openFile(dM);
+                    sL.openFile(dM);
                     return;
                 case ("viewProfile"):
                     try
@@ -91,7 +91,7 @@ namespace League_2
         {
             int w = dM.getCurrentWeek();
             Settings s = dM.getSettings();
-            List<Player> x = p.OrderByDescending(z => z.calculateScore(w,s)).ToList();
+            List<Player> x = p.OrderByDescending(z => z.calculateScore(dM)).ToList();
             return x;
         }
         
@@ -122,7 +122,7 @@ namespace League_2
             foreach (Player p in sortedList)
             {
                 p.setPlacement(positionCounter, dM.getCurrentWeek());
-                listBox1.Items.Add(p.Print(dM.getCurrentWeek(), dM.getSettings()));
+                listBox1.Items.Add(p.Print(dM));
                 positionCounter++;
             }
         }
@@ -203,6 +203,16 @@ namespace League_2
         private void Form1_Activated(object sender, EventArgs e)
         {
             UpdateAll();
+        }
+
+        private void NameBox_TextChanged(object sender, KeyEventArgs e)
+        {
+            //Om vi trycker enter i textboxen, lägg till spelare.
+            if (e.KeyCode == Keys.Enter)
+            {
+                addPlayer.PerformClick();
+                e.SuppressKeyPress = true;
+            }
         }
     }
 }
