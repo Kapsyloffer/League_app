@@ -5,19 +5,17 @@ using System.Text;
 using System.Threading.Tasks;
 using System.IO;
 using System.Runtime.Serialization.Formatters.Binary;
+using System.Windows.Forms;
 
 namespace League_2
 {
     class SaveLoad
     {
-        //Default path.
-        //TODO: Make changable.
-        private String filePath = "C:\\Users\\User\\save.save";
         public void saveFile(DataManager d)
         {
             try
             {
-                using (Stream stream = File.Open(filePath, FileMode.OpenOrCreate, FileAccess.ReadWrite))
+                using (Stream stream = File.Open(d.getPath(), FileMode.OpenOrCreate, FileAccess.ReadWrite))
                 {
                     var binaryFormatter = new BinaryFormatter();
                     binaryFormatter.Serialize(stream, d);
@@ -29,11 +27,11 @@ namespace League_2
                 System.Windows.Forms.MessageBox.Show(e.Message);
             }
         }
-        public void openFile(DataManager d)
+        public void openLatest(DataManager d)
         {
             try
             {
-                using (Stream stream = File.Open(filePath, FileMode.Open, FileAccess.Read))
+                using (Stream stream = File.Open(d.getPath(), FileMode.Open, FileAccess.Read))
                 {
                 var binaryFormatter = new BinaryFormatter();
                 d.setDM((DataManager)binaryFormatter.Deserialize(stream));
@@ -44,6 +42,46 @@ namespace League_2
             {
                 System.Windows.Forms.MessageBox.Show(e.Message);
             }
+        }
+
+        public void openFile(DataManager d)
+        {
+            //File popup
+            OpenFileDialog ofd = new OpenFileDialog();
+            //Result of the popup
+            DialogResult result = ofd.ShowDialog();
+            //Filter file type.
+            ofd.Filter = "Save File|*.save";
+            if (result == DialogResult.OK)
+            {
+                d.setPath(ofd.InitialDirectory + ofd.FileName);
+            }
+            //TODO: Fixa namnen sen.
+            openLatest(d);
+        }
+
+        public void saveAs(DataManager d)
+        {
+            //File popup
+            SaveFileDialog sfd = new SaveFileDialog();
+            //Result of the popup
+            DialogResult result = sfd.ShowDialog();
+            //Filter file type.
+            sfd.Filter = "Save File|*.save";
+            if (result == DialogResult.OK)
+            {
+                if(sfd.FileName == null)
+                {
+                    sfd.FileName = "saveFile.save";
+                }
+                else
+                {
+                    //TODO: Set filename in dialog
+                }
+                d.setPath(sfd.InitialDirectory + sfd.FileName);
+            }
+            MessageBox.Show(d.getPath());
+            saveFile(d);
         }
     }
 }

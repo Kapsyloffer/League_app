@@ -73,6 +73,12 @@ namespace League_2
                 case ("openFile"):
                     sL.openFile(dM);
                     return;
+                case ("openLatest"):
+                    sL.openLatest(dM);
+                    return;
+                case ("saveAs"):
+                    sL.saveAs(dM);
+                    return;
                 case ("viewProfile"):
                     try
                     {

@@ -16,6 +16,9 @@ namespace League_2
         private Settings LocalSettings = new Settings();
         //Sparar nuvarande vecka för att förhindra förvirring on load. (feedback)
         private int currentWeek = 1;
+        //Default path for saving files.
+        //TODO: Make changable.
+        private String filePath = "C:\\Users\\User\\save.save";
 
         //Lägg till en ny spelare i listan
         public void addPlayer(String n)
@@ -70,6 +73,16 @@ namespace League_2
             this.setSettings(nd.getSettings());
             this.setCurrentWeek(nd.getCurrentWeek());
             this.setMaxWeeks(nd.getMaxWeeks());
+        }
+
+        public String getPath()
+        {
+            return filePath;
+        }
+
+        public void setPath(String newPath)
+        {
+            filePath = newPath;
         }
     }
 }

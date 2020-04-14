@@ -44,7 +44,7 @@
             this.rareList = new System.Windows.Forms.ListBox();
             this.label1 = new System.Windows.Forms.Label();
             this.addNote = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.noteInput = new System.Windows.Forms.TextBox();
             this.totalScore = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
@@ -136,7 +136,7 @@
             this.statGroup.Controls.Add(this.rareList);
             this.statGroup.Controls.Add(this.label1);
             this.statGroup.Controls.Add(this.addNote);
-            this.statGroup.Controls.Add(this.textBox1);
+            this.statGroup.Controls.Add(this.noteInput);
             this.statGroup.Controls.Add(this.totalScore);
             this.statGroup.Controls.Add(this.label9);
             this.statGroup.Controls.Add(this.label8);
@@ -205,6 +205,7 @@
             this.rareInput.Name = "rareInput";
             this.rareInput.Size = new System.Drawing.Size(165, 20);
             this.rareInput.TabIndex = 17;
+            this.rareInput.KeyDown += new System.Windows.Forms.KeyEventHandler(this.NameBox_TextChanged);
             // 
             // rareList
             // 
@@ -236,13 +237,14 @@
             this.addNote.UseVisualStyleBackColor = true;
             this.addNote.Click += new System.EventHandler(this.buttonPress);
             // 
-            // textBox1
+            // noteInput
             // 
-            this.textBox1.Location = new System.Drawing.Point(9, 344);
-            this.textBox1.MaxLength = 20;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(230, 20);
-            this.textBox1.TabIndex = 13;
+            this.noteInput.Location = new System.Drawing.Point(9, 344);
+            this.noteInput.MaxLength = 20;
+            this.noteInput.Name = "noteInput";
+            this.noteInput.Size = new System.Drawing.Size(230, 20);
+            this.noteInput.TabIndex = 13;
+            this.noteInput.KeyDown += new System.Windows.Forms.KeyEventHandler(this.NameBox_TextChanged);
             // 
             // totalScore
             // 
@@ -406,7 +408,7 @@
         private System.Windows.Forms.Label winCount;
         private System.Windows.Forms.GroupBox statGroup;
         private System.Windows.Forms.Button addNote;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox noteInput;
         private System.Windows.Forms.Label totalScore;
         private System.Windows.Forms.Label placement;
         private System.Windows.Forms.Label label9;

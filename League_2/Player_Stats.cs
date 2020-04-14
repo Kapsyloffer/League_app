@@ -36,7 +36,7 @@ namespace League_2
             totalScore.Text = $"{player.calculateScore(dM_new)}";
             placement.Text = $"{player.getPlacement(dM_new)}";
             addNote.Text = $"Add note (week {dM_new.getCurrentWeek()})";
-            textBox1.Text = player.getNote(week);
+            noteInput.Text = player.getNote(week);
             playerList.Items.Clear();
             foreach (Player pp in dM_new.getPlayerList())
             {
@@ -49,7 +49,7 @@ namespace League_2
             {
                 //If a note is added on that week.
                 case ("addNote"):
-                    player.setNote(textBox1.Text, week);
+                    player.setNote(noteInput.Text, week);
                     MessageBox.Show("Note added.");
                     return;
                 //If a rare (Magic the gathering) is added.
@@ -88,6 +88,16 @@ namespace League_2
         //Refresh everything on screen.
         private void refreshList()
         {
+            if(player.getRares().Count>0)
+            {
+                removeRare.Enabled = true;
+                lookup.Enabled = true;
+            }
+            else
+            {
+                removeRare.Enabled = false;
+                lookup.Enabled = false;
+            }
             //Clear all
             playerList.Items.Clear();
             rareList.Items.Clear();
@@ -107,13 +117,27 @@ namespace League_2
             }
         }
 
+        //Jag vet att detta är hella fult, but what can you do?
         private void NameBox_TextChanged(object sender, KeyEventArgs e)
         {
             //Om vi trycker enter i textboxen, lägg till spelare.
             if (e.KeyCode == Keys.Enter)
             {
-                changeName.PerformClick();
-                e.SuppressKeyPress = true;
+                switch (((TextBox)sender).Name)
+                {
+                    case ("playerName"):
+                        changeName.PerformClick();
+                        e.SuppressKeyPress = true;
+                        return;
+                    case ("rareInput"):
+                        addRare.PerformClick();
+                        e.SuppressKeyPress = true;
+                        return;
+                    case ("noteInput"):
+                        addNote.PerformClick();
+                        e.SuppressKeyPress = true;
+                        return;
+            }
             }
         }
     }

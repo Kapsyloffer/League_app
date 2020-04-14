@@ -65,8 +65,7 @@
             // 
             // openLatest
             // 
-            this.openLatest.Enabled = false;
-            this.openLatest.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.openLatest.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.openLatest.Location = new System.Drawing.Point(730, 345);
             this.openLatest.Name = "openLatest";
             this.openLatest.Size = new System.Drawing.Size(87, 39);
@@ -99,8 +98,7 @@
             // 
             // saveAs
             // 
-            this.saveAs.Enabled = false;
-            this.saveAs.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.saveAs.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.saveAs.Location = new System.Drawing.Point(730, 395);
             this.saveAs.Name = "saveAs";
             this.saveAs.Size = new System.Drawing.Size(87, 39);
