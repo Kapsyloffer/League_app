@@ -54,6 +54,14 @@ namespace League_2
             ofd.Filter = "Save File|*.save";
             if (result == DialogResult.OK)
             {
+                if (ofd.FileName == null)
+                {
+                    ofd.FileName = "saveFile.save";
+                }
+                else
+                {
+                    //TODO: Set filename in dialog
+                }
                 d.setPath(ofd.InitialDirectory + ofd.FileName);
             }
             //TODO: Fixa namnen sen.

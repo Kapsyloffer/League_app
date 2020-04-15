@@ -73,8 +73,10 @@ namespace League_2
             this.setSettings(nd.getSettings());
             this.setCurrentWeek(nd.getCurrentWeek());
             this.setMaxWeeks(nd.getMaxWeeks());
+            this.setPath(nd.getPath());
         }
 
+        //filePath
         public String getPath()
         {
             return filePath;

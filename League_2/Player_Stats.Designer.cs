@@ -57,6 +57,7 @@
             this.playerList = new System.Windows.Forms.ListBox();
             this.label18 = new System.Windows.Forms.Label();
             this.playerName = new System.Windows.Forms.TextBox();
+            this.deletePlayer = new System.Windows.Forms.Button();
             this.statGroup.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -336,7 +337,7 @@
             this.groupBox1.Controls.Add(this.label18);
             this.groupBox1.Location = new System.Drawing.Point(444, 87);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(272, 425);
+            this.groupBox1.Size = new System.Drawing.Size(272, 422);
             this.groupBox1.TabIndex = 16;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Players";
@@ -372,11 +373,24 @@
             this.playerName.Text = "playerName";
             this.playerName.KeyDown += new System.Windows.Forms.KeyEventHandler(this.NameBox_TextChanged);
             // 
+            // deletePlayer
+            // 
+            this.deletePlayer.BackColor = System.Drawing.Color.Red;
+            this.deletePlayer.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.deletePlayer.ForeColor = System.Drawing.Color.Gold;
+            this.deletePlayer.Location = new System.Drawing.Point(13, 515);
+            this.deletePlayer.Name = "deletePlayer";
+            this.deletePlayer.Size = new System.Drawing.Size(90, 25);
+            this.deletePlayer.TabIndex = 23;
+            this.deletePlayer.Text = "Delete player";
+            this.deletePlayer.UseVisualStyleBackColor = false;
+            // 
             // Player_Stats
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(730, 529);
+            this.ClientSize = new System.Drawing.Size(730, 546);
+            this.Controls.Add(this.deletePlayer);
             this.Controls.Add(this.playerName);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.changeName);
@@ -388,6 +402,8 @@
             this.Controls.Add(this.placement);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "Player_Stats";
             this.Text = "Player stats";
             this.statGroup.ResumeLayout(false);
@@ -428,5 +444,6 @@
         private System.Windows.Forms.ListBox playerList;
         private System.Windows.Forms.Label label18;
         private System.Windows.Forms.TextBox playerName;
+        private System.Windows.Forms.Button deletePlayer;
     }
 }
