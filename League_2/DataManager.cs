@@ -18,7 +18,8 @@ namespace League_2
         private int currentWeek = 1;
         //Default path for saving files.
         //TODO: Make changable.
-        private String filePath = "C:\\Users\\User\\save.save";
+        private String filePath = "C:\\Users\\User\\Save.save";
+        private String fileName = "Save.save";
 
         //Lägg till en ny spelare i listan
         public void addPlayer(String n)
@@ -73,7 +74,15 @@ namespace League_2
             this.setSettings(nd.getSettings());
             this.setCurrentWeek(nd.getCurrentWeek());
             this.setMaxWeeks(nd.getMaxWeeks());
-            this.setPath(nd.getPath());
+            this.setPath(nd.getPath(), nd.getFileName());
+            System.Windows.Forms.MessageBox.Show(
+                $"PlayerList count: {nd.getPlayerList().Count()}\n" +
+                $"Win points: {nd.getSettings().getWinPoint()}\n" +
+                $"Loss points: {nd.getSettings().getLossPoint()}\n" +
+                $"Current week: {nd.getCurrentWeek()}\n" +
+                $"Max weeks: {nd.getMaxWeeks()}\n" +
+                $"Path: {nd.getPath()}\n" +
+                $"Filename: {nd.getFileName()}");
         }
 
         //filePath
@@ -82,9 +91,15 @@ namespace League_2
             return filePath;
         }
 
-        public void setPath(String newPath)
+        public String getFileName()
+        {
+            return fileName;
+        }
+
+        public void setPath(String newPath, String newFileName)
         {
             filePath = newPath;
+            fileName = newFileName;
         }
     }
 }

@@ -384,6 +384,7 @@
             this.deletePlayer.TabIndex = 23;
             this.deletePlayer.Text = "Delete player";
             this.deletePlayer.UseVisualStyleBackColor = false;
+            this.deletePlayer.Click += new System.EventHandler(this.buttonPress);
             // 
             // Player_Stats
             // 
