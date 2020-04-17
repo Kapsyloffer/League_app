@@ -11,6 +11,7 @@ namespace League_2
 {
     class SaveLoad
     {
+        private Boolean exists = false;
         public void saveFile(DataManager d)
         {
             try
@@ -33,8 +34,9 @@ namespace League_2
             {
                 using (Stream stream = File.Open(d.getPath(), FileMode.Open, FileAccess.Read))
                 {
-                var binaryFormatter = new BinaryFormatter();
-                d.setDM((DataManager)binaryFormatter.Deserialize(stream));
+                    var binaryFormatter = new BinaryFormatter();
+                    d.setDM((DataManager)binaryFormatter.Deserialize(stream));
+                    exists = true;
                 }
             }
             catch(Exception e)
@@ -55,8 +57,7 @@ namespace League_2
 
             if (result == DialogResult.OK)
             {
-                String name = ofd.FileName;
-                d.setPath(Path.GetFullPath(ofd.FileName), name);
+                d.setPath(Path.GetFullPath(ofd.FileName));
                 openLatest(d);
             }
             //TODO: Fixa namnen sen.
@@ -74,10 +75,17 @@ namespace League_2
 
             if (result == DialogResult.OK)
             {
-                d.setPath(Path.GetFullPath(sfd.FileName), sfd.FileName);
+                d.setPath(Path.GetFullPath(sfd.FileName));
                 MessageBox.Show(d.getPath());
                 saveFile(d);
+                exists = true;
             }
+        }
+
+        //Will be true if this file has ever been saved.
+        public Boolean thisFileExists()
+        {
+            return exists;
         }
     }
 }

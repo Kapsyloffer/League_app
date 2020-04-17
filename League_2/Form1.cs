@@ -68,7 +68,14 @@ namespace League_2
                     return;
                 //Spara och ladda ligger i SaveLoad klassen.
                 case ("saveFile"):
-                    sL.saveFile(dM);
+                    if (dM.getHasPath() && sL.thisFileExists())
+                    {
+                        sL.saveFile(dM);
+                    }
+                    else
+                    {
+                        sL.saveAs(dM);
+                    }
                     return;
                 case ("openFile"):
                     sL.openFile(dM);
@@ -116,6 +123,16 @@ namespace League_2
             else
             {
                 placementBox.Text = $"Standings (Total)";
+            }
+            if(!dM.getHasPath())
+            {
+                saveAs.Enabled = false;
+                openLatest.Enabled = false;
+            }
+            else
+            {
+                saveAs.Enabled = true;
+                openLatest.Enabled = true;
             }
         }
         
@@ -218,6 +235,26 @@ namespace League_2
             {
                 addPlayer.PerformClick();
                 e.SuppressKeyPress = true;
+            }
+        }
+
+        private void Form1_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            //Dialog Box
+            DialogResult dr = MessageBox.Show("Save before exiting?", "Exit", MessageBoxButtons.YesNoCancel);
+
+            //Ask if you want to save progress
+            switch (dr)
+            {
+                //Yes saves and exits, no exits, cancel does not close.
+                case DialogResult.Yes:
+                    saveFile.PerformClick();
+                    break;
+                case DialogResult.No:
+                    break;
+                case DialogResult.Cancel:
+                    e.Cancel = true ;
+                    break;
             }
         }
     }

@@ -344,6 +344,7 @@
             this.Name = "Form1";
             this.Text = "League Project";
             this.Activated += new System.EventHandler(this.Form1_Activated);
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form1_FormClosing);
             this.groupBox1.ResumeLayout(false);
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();

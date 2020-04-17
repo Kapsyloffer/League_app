@@ -10,3 +10,15 @@ C:\Users\User\source\repos\League_2\League_2\bin\Debug\League Scoreboard.pdb
 C:\Users\User\source\repos\League_2\League_2\obj\Debug\League Scoreboard.exe
 C:\Users\User\source\repos\League_2\League_2\obj\Debug\League Scoreboard.pdb
 C:\Users\User\source\repos\League_2\League_2\obj\Debug\League_2.SettingsUI.resources
+D:\Git projects\League_2\League_2\bin\Debug\League Scoreboard.exe.config
+D:\Git projects\League_2\League_2\bin\Debug\League Scoreboard.exe
+D:\Git projects\League_2\League_2\bin\Debug\League Scoreboard.pdb
+D:\Git projects\League_2\League_2\obj\Debug\League_2.csprojAssemblyReference.cache
+D:\Git projects\League_2\League_2\obj\Debug\League_2.Form1.resources
+D:\Git projects\League_2\League_2\obj\Debug\League_2.Player_Stats.resources
+D:\Git projects\League_2\League_2\obj\Debug\League_2.Properties.Resources.resources
+D:\Git projects\League_2\League_2\obj\Debug\League_2.SettingsUI.resources
+D:\Git projects\League_2\League_2\obj\Debug\League_2.csproj.GenerateResource.cache
+D:\Git projects\League_2\League_2\obj\Debug\League_2.csproj.CoreCompileInputs.cache
+D:\Git projects\League_2\League_2\obj\Debug\League Scoreboard.exe
+D:\Git projects\League_2\League_2\obj\Debug\League Scoreboard.pdb
