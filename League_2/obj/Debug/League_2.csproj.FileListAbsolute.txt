@@ -22,3 +22,7 @@ D:\Git projects\League_2\League_2\obj\Debug\League_2.csproj.GenerateResource.cac
 D:\Git projects\League_2\League_2\obj\Debug\League_2.csproj.CoreCompileInputs.cache
 D:\Git projects\League_2\League_2\obj\Debug\League Scoreboard.exe
 D:\Git projects\League_2\League_2\obj\Debug\League Scoreboard.pdb
+D:\Git projects\League_2\League_2\bin\Debug\League Scoreboard.exe.manifest
+D:\Git projects\League_2\League_2\bin\Debug\League Scoreboard.application
+D:\Git projects\League_2\League_2\obj\Debug\League Scoreboard.exe.manifest
+D:\Git projects\League_2\League_2\obj\Debug\League Scoreboard.application
