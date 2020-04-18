@@ -25,6 +25,7 @@ namespace League_2
         {
             switch (((Button)sender).Name)
             {
+                //Add player; players may share name as the list is ID based.
                 case ("addPlayer"):
                     if (nameBox.Text.Length >= 2)
                     {
@@ -88,20 +89,20 @@ namespace League_2
                     }
                     return;
                 case ("openFile"):
-                    sL.openFile(dM);
+                        sL.openFile(dM);
                     return;
                 case ("openLatest"):
-                    sL.openLatest(dM);
+                        sL.openLatest(dM);
                     return;
                 case ("saveAs"):
-                    sL.saveAs(dM);
+                        sL.saveAs(dM);
                     return;
                 case ("viewProfile"):
                     try
                     {
-                    Player_Stats curPlayer = new Player_Stats(sortList(dM.getPlayerList())[listBox1.SelectedIndex], dM);
-                    curPlayer.ShowDialog();
-                    curPlayer.Focus();
+                        Player_Stats curPlayer = new Player_Stats(sortList(dM.getPlayerList())[listBox1.SelectedIndex], dM);
+                        curPlayer.ShowDialog();
+                        curPlayer.Focus();
                     }
                     catch{}
                     return;
