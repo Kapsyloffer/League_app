@@ -1,14 +1,11 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace League_2
 {
     [Serializable]
     class Settings
     {
+        //TODO: Fix safety check boolean maybe?
         private int winPoints;
         private int lossPoints;
         private int weeks;

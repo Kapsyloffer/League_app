@@ -205,6 +205,7 @@
             // placementBox
             // 
             this.placementBox.Controls.Add(this.label6);
+            this.placementBox.Controls.Add(this.viewProfile);
             this.placementBox.Controls.Add(this.label5);
             this.placementBox.Controls.Add(this.label4);
             this.placementBox.Controls.Add(this.label3);
@@ -213,7 +214,7 @@
             this.placementBox.Controls.Add(this.listBox1);
             this.placementBox.Location = new System.Drawing.Point(12, 12);
             this.placementBox.Name = "placementBox";
-            this.placementBox.Size = new System.Drawing.Size(608, 422);
+            this.placementBox.Size = new System.Drawing.Size(608, 447);
             this.placementBox.TabIndex = 7;
             this.placementBox.TabStop = false;
             this.placementBox.Text = "Standings (Week x)";
@@ -316,9 +317,9 @@
             // viewProfile
             // 
             this.viewProfile.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.viewProfile.Location = new System.Drawing.Point(16, 453);
+            this.viewProfile.Location = new System.Drawing.Point(7, 407);
             this.viewProfile.Name = "viewProfile";
-            this.viewProfile.Size = new System.Drawing.Size(87, 39);
+            this.viewProfile.Size = new System.Drawing.Size(87, 27);
             this.viewProfile.TabIndex = 13;
             this.viewProfile.Text = "View profile";
             this.viewProfile.UseVisualStyleBackColor = true;
@@ -328,8 +329,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(847, 514);
-            this.Controls.Add(this.viewProfile);
+            this.ClientSize = new System.Drawing.Size(847, 466);
             this.Controls.Add(this.openSettings);
             this.Controls.Add(this.placementBox);
             this.Controls.Add(this.groupBox3);

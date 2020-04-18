@@ -1,11 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace League_2
@@ -51,27 +44,82 @@ namespace League_2
                 case ("addNote"):
                     player.setNote(noteInput.Text, week);
                     MessageBox.Show("Note added.");
-                    return;
+                    break;
+
                 //If a rare (Magic the gathering) is added.
                 case ("addRare"):
                     player.addRare(rareInput.Text);
                     rareInput.Clear();
                     rareInput.Focus();
                     refreshList();
-                    return;
+                    break;
+
+                //If a rare is removed.
+                case ("removeRare"):
+                    try
+                    {
+                        player.getRares().Remove(player.getRares()[rareList.SelectedIndex]);
+                        refreshList();
+                    }
+                    catch { }
+                    break;
+
                 //Change the name on the selected player.
                 case ("changeName"):
-                    if (playerName.Text.Length >= 2)
-                    { 
-                        player.setName(playerName.Text);
-                        refreshList();
-                        MessageBox.Show($"The name for ID:{player.getID()} has been changed to {player.getName()}!");
+                        if (playerName.Text.Length >= 2)
+                        { 
+                            player.setName(playerName.Text);
+                            refreshList();
+                            MessageBox.Show($"The name for ID:{player.getID()} has been changed to {player.getName()}!");
+                        }
+                        else
+                        {
+                            MessageBox.Show("The name you have selected is too short.");
                     }
-                    else
+                    break;
+
+                //Delete player from playerlist. Past games remain.
+                case ("deletePlayer"):
+                    //Dialog Box
+                    DialogResult dr = MessageBox.Show($"Are you sure you want to remove {player.getName()}?", "Remove player", MessageBoxButtons.YesNo);
+
+                    //Ask if you want to save progress
+                    switch (dr)
                     {
-                        MessageBox.Show("The name you have selected is too short.");
+                        //Yes saves and exits, no exits, cancel does not close.
+                        case DialogResult.Yes:
+                            dM_new.getPlayerList().Remove(player);
+                            switchPlayer(dM_new.getPlayerList()[0]);
+                            refreshList();
+                            break;
+                        case DialogResult.No:
+                            break;
                     }
-                    return;
+                    break;
+
+                //Designed for MTG; lookup the rare card on scryfall.
+                case ("lookup"):
+                    try
+                    {
+                        string card = player.getRares()[rareList.SelectedIndex];
+                        System.Diagnostics.Process.Start($"https://scryfall.com/search?q={card}");
+                    }
+                    catch
+                    {
+                    }
+                break;
+
+                //Remove game from both players
+                case ("removeGame"):
+                    try
+                    {
+                        Game selectedGame = player.getGames()[gameHistory.SelectedIndex];
+                        selectedGame.getLoser().getGames().Remove(selectedGame);
+                        selectedGame.getWinner().getGames().Remove(selectedGame);
+                        refreshList();
+                    }catch{}
+                break;
+
             }
         }
 

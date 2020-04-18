@@ -33,10 +33,11 @@ namespace League_2
                     }
                     nameBox.Focus();
                     return;
+
                 //Ett game är definierat som en match med en förlorare och en vinnare.
                 case ("addGame"):
                     //Checkar att allt är valid, och om de inte har spelat tidigare denna vecka så lägger vi till.
-                    if(comboWinner.SelectedIndex== -1 || comboLoser.SelectedIndex == -1 || comboWinner.SelectedIndex == comboLoser.SelectedIndex)
+                    if (comboWinner.SelectedIndex== -1 || comboLoser.SelectedIndex == -1 || comboWinner.SelectedIndex == comboLoser.SelectedIndex)
                     {
                         MessageBox.Show("Please select different players.");
                         return;
@@ -46,8 +47,17 @@ namespace League_2
                     List<Player> sortedList = sortList(dM.getPlayerList());
                     Player Winner = sortedList[comboWinner.SelectedIndex];
                     Player Loser = sortedList[comboLoser.SelectedIndex];
+
+                    //Confirm if you want to register just this game. (safety check)
+                    DialogResult dr = MessageBox.Show($"Winner:{Winner.getName()}\nLoser:{Loser.getName()}\nWeek:{dM.getCurrentWeek()}", "Confirmation", MessageBoxButtons.YesNo);
+                    if (dr == DialogResult.No)
+                    {
+                        UpdateAll();
+                        return;
+                    }
+
                     //Säkerhetskoll för att se om det finns dubletter per vecka.
-                    foreach(Game game in Winner.getGames())
+                    foreach (Game game in Winner.getGames())
                     {
                         if(game.getWinner() == Winner && game.getLoser() == Loser || game.getWinner() == Loser && game.getLoser() == Winner)
                         {
@@ -126,12 +136,10 @@ namespace League_2
             }
             if(!dM.getHasPath())
             {
-                saveAs.Enabled = false;
                 openLatest.Enabled = false;
             }
             else
             {
-                saveAs.Enabled = true;
                 openLatest.Enabled = true;
             }
         }

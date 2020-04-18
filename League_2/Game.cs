@@ -1,14 +1,11 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace League_2
 {
     [Serializable]
     class Game
     {
+        //TODO: Maybe add a date and time?
         private Player winner;
         private Player loser;
         private int week;

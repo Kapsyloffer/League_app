@@ -38,8 +38,6 @@
             this.saveSettings = new System.Windows.Forms.Button();
             this.winPoint = new System.Windows.Forms.NumericUpDown();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.confirmations = new System.Windows.Forms.CheckBox();
-            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.maxWeeks)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.lossPoint)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.winPoint)).BeginInit();
@@ -153,8 +151,6 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Controls.Add(this.confirmations);
             this.groupBox1.Controls.Add(this.maxWeeks);
             this.groupBox1.Controls.Add(this.lossPoint);
             this.groupBox1.Controls.Add(this.label4);
@@ -167,25 +163,6 @@
             this.groupBox1.TabIndex = 11;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Score settings";
-            // 
-            // confirmations
-            // 
-            this.confirmations.AutoSize = true;
-            this.confirmations.Location = new System.Drawing.Point(9, 120);
-            this.confirmations.Name = "confirmations";
-            this.confirmations.Size = new System.Drawing.Size(150, 17);
-            this.confirmations.TabIndex = 7;
-            this.confirmations.Text = "Enable extra confirmations";
-            this.confirmations.UseVisualStyleBackColor = true;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(2, 140);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(202, 13);
-            this.label1.TabIndex = 8;
-            this.label1.Text = "(Will ask for confirmation for each action.)";
             // 
             // SettingsUI
             // 
@@ -218,7 +195,5 @@
         private System.Windows.Forms.Button saveSettings;
         private System.Windows.Forms.NumericUpDown winPoint;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.CheckBox confirmations;
-        private System.Windows.Forms.Label label1;
     }
 }

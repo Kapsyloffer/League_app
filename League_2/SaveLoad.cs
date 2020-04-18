@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.IO;
 using System.Runtime.Serialization.Formatters.Binary;
 using System.Windows.Forms;
@@ -25,6 +21,8 @@ namespace League_2
             }
             catch(Exception e)
             {
+                exists = false;
+                d.setHasPath(false);
                 MessageBox.Show(e.Message);
             }
         }
@@ -41,6 +39,8 @@ namespace League_2
             }
             catch(Exception e)
             {
+                exists = false;
+                d.setHasPath(false);
                 MessageBox.Show(e.Message);
             }
         }

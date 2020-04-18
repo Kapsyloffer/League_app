@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 using Microsoft.Win32;
 
 //Håll all data här. Läs och skriv allt här.
@@ -32,11 +31,11 @@ namespace League_2
                 if (filePath != null)
                 {
                     hasPath = true;
-                    System.Windows.Forms.MessageBox.Show("owowowo");
                 }
             }
             catch(Exception e)
             {
+                hasPath = false;
                 System.Windows.Forms.MessageBox.Show(e.Message);
             }
         }
@@ -44,6 +43,11 @@ namespace League_2
         public Boolean getHasPath()
         {
             return hasPath;
+        }
+
+        public void setHasPath(Boolean b)
+        {
+            hasPath = b;
         }
 
         //Lägg till en ny spelare i listan

@@ -1,11 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace League_2
@@ -17,6 +10,7 @@ namespace League_2
         {
             InitializeComponent();
             this.dM = d;
+            //set all of the values-
             winPoint.Value = dM.getSettings().getWinPoint();
             lossPoint.Value = dM.getSettings().getLossPoint();
             maxWeeks.Value = dM.getSettings().getWeeks();
@@ -34,7 +28,7 @@ namespace League_2
             }
         }
 
-
+        //Apply all settings set by the user.
         public void pushSettings()
         {
             Settings s = dM.getSettings();
