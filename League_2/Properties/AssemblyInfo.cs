@@ -5,12 +5,12 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("League_2")]
-[assembly: AssemblyDescription("")]
-[assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("League_2")]
-[assembly: AssemblyCopyright("Copyright ©  2020")]
+[assembly: AssemblyTitle("Crille's Scoreboard")]
+[assembly: AssemblyDescription("A program used to keep track of scores in games, specifically designed for MTG")]
+[assembly: AssemblyConfiguration("Final")]
+[assembly: AssemblyCompany("None/Independent")]
+[assembly: AssemblyProduct("Scoreboard")]
+[assembly: AssemblyCopyright("Copyright ©2020")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
