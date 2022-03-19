@@ -26,3 +26,19 @@ D:\Git projects\League_2\League_2\bin\Debug\League Scoreboard.exe.manifest
 D:\Git projects\League_2\League_2\bin\Debug\League Scoreboard.application
 D:\Git projects\League_2\League_2\obj\Debug\League Scoreboard.exe.manifest
 D:\Git projects\League_2\League_2\obj\Debug\League Scoreboard.application
+E:\League_app\League_2\obj\Debug\League_2.csproj.AssemblyReference.cache
+E:\League_app\League_2\obj\Debug\League_2.Form1.resources
+E:\League_app\League_2\obj\Debug\League_2.Player_Stats.resources
+E:\League_app\League_2\obj\Debug\League_2.Properties.Resources.resources
+E:\League_app\League_2\obj\Debug\League_2.SettingsUI.resources
+E:\League_app\League_2\obj\Debug\League_2.csproj.GenerateResource.cache
+E:\League_app\League_2\obj\Debug\League_2.csproj.CoreCompileInputs.cache
+E:\League_app\League_2\obj\Debug\League Scoreboard.exe
+E:\League_app\League_2\obj\Debug\League Scoreboard.pdb
+E:\League_app\League_2\bin\Debug\League Scoreboard.exe.config
+E:\League_app\League_2\bin\Debug\League Scoreboard.exe.manifest
+E:\League_app\League_2\bin\Debug\League Scoreboard.application
+E:\League_app\League_2\bin\Debug\League Scoreboard.exe
+E:\League_app\League_2\bin\Debug\League Scoreboard.pdb
+E:\League_app\League_2\obj\Debug\League Scoreboard.exe.manifest
+E:\League_app\League_2\obj\Debug\League Scoreboard.application

@@ -19,7 +19,7 @@ namespace League_2
                     MessageBox.Show("Save Successful");
                 }
             }
-            catch(Exception e)
+            catch (Exception e)
             {
                 exists = false;
                 d.setHasPath(false);

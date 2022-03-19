@@ -19,7 +19,7 @@ namespace League_2
             InitializeComponent();
             UpdateAll();
         }
-        
+
         //Switch för varje button på Form1 UI:n
         private void buttonPress(object sender, EventArgs e)
         {
@@ -38,7 +38,7 @@ namespace League_2
                 //Ett game är definierat som en match med en förlorare och en vinnare.
                 case ("addGame"):
                     //Checkar att allt är valid, och om de inte har spelat tidigare denna vecka så lägger vi till.
-                    if (comboWinner.SelectedIndex== -1 || comboLoser.SelectedIndex == -1 || comboWinner.SelectedIndex == comboLoser.SelectedIndex)
+                    if (comboWinner.SelectedIndex == -1 || comboLoser.SelectedIndex == -1 || comboWinner.SelectedIndex == comboLoser.SelectedIndex)
                     {
                         MessageBox.Show("Please select different players.");
                         return;
@@ -60,9 +60,9 @@ namespace League_2
                     //Säkerhetskoll för att se om det finns dubletter per vecka.
                     foreach (Game game in Winner.getGames())
                     {
-                        if(game.getWinner() == Winner && game.getLoser() == Loser || game.getWinner() == Loser && game.getLoser() == Winner)
+                        if (game.getWinner() == Winner && game.getLoser() == Loser || game.getWinner() == Loser && game.getLoser() == Winner)
                         {
-                            if(game.getWeek() == dM.getCurrentWeek())
+                            if (game.getWeek() == dM.getCurrentWeek())
                             {
                                 MessageBox.Show("The game has already been played this week.");
                                 return;
@@ -89,13 +89,13 @@ namespace League_2
                     }
                     return;
                 case ("openFile"):
-                        sL.openFile(dM);
+                    sL.openFile(dM);
                     return;
                 case ("openLatest"):
-                        sL.openLatest(dM);
+                    sL.openLatest(dM);
                     return;
                 case ("saveAs"):
-                        sL.saveAs(dM);
+                    sL.saveAs(dM);
                     return;
                 case ("viewProfile"):
                     try
@@ -104,7 +104,7 @@ namespace League_2
                         curPlayer.ShowDialog();
                         curPlayer.Focus();
                     }
-                    catch{}
+                    catch { }
                     return;
 
             }
@@ -118,7 +118,7 @@ namespace League_2
             List<Player> x = p.OrderByDescending(z => z.calculateScore(dM)).ToList();
             return x;
         }
-        
+
         //Updatera all data på UI:n
         internal void UpdateAll()
         {
@@ -135,7 +135,7 @@ namespace League_2
             {
                 placementBox.Text = $"Standings (Total)";
             }
-            if(!dM.getHasPath())
+            if (!dM.getHasPath())
             {
                 openLatest.Enabled = false;
             }
@@ -144,7 +144,7 @@ namespace League_2
                 openLatest.Enabled = true;
             }
         }
-        
+
         //Updaterar endast listboxes
         private void UpdateListBox()
         {
@@ -158,7 +158,7 @@ namespace League_2
                 positionCounter++;
             }
         }
-        
+
         //Updaterar endast comboboxes
         private void UpdateComboBox()
         {
@@ -220,7 +220,7 @@ namespace League_2
         private void SelectedIndexChanged(object sender, EventArgs e)
         {
             //Förhindra stackOverflow ifall vivalde samma vecka igen. Triggras även av UpdateAll()
-            if(((ComboBox)sender).SelectedIndex == dM.getCurrentWeek())
+            if (((ComboBox)sender).SelectedIndex == dM.getCurrentWeek())
             {
                 return;
             }
@@ -230,7 +230,7 @@ namespace League_2
                 UpdateAll();
             }
         }
-       
+
         //Om vi fokuserar på fönstret, refresha.
         private void Form1_Activated(object sender, EventArgs e)
         {
@@ -262,8 +262,21 @@ namespace League_2
                 case DialogResult.No:
                     break;
                 case DialogResult.Cancel:
-                    e.Cancel = true ;
+                    e.Cancel = true;
                     break;
+            }
+        }
+        //Om vi dubbelklickar på ett namnså öppnas profilen.
+        private void listBox1_DoubleClick(object sender, System.EventArgs e)
+        {
+            try
+            {
+                Player_Stats curPlayer = new Player_Stats(sortList(dM.getPlayerList())[listBox1.SelectedIndex], dM);
+                curPlayer.ShowDialog();
+                curPlayer.Focus();
+            }
+            catch 
+            {
             }
         }
     }

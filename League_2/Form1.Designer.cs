@@ -45,6 +45,7 @@
             this.comboWeek = new System.Windows.Forms.ComboBox();
             this.placementBox = new System.Windows.Forms.GroupBox();
             this.label6 = new System.Windows.Forms.Label();
+            this.viewProfile = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -55,7 +56,6 @@
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.viewProfileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.deletePlayerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.viewProfile = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -228,6 +228,17 @@
             this.label6.TabIndex = 6;
             this.label6.Text = "ID:";
             // 
+            // viewProfile
+            // 
+            this.viewProfile.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.viewProfile.Location = new System.Drawing.Point(7, 407);
+            this.viewProfile.Name = "viewProfile";
+            this.viewProfile.Size = new System.Drawing.Size(87, 27);
+            this.viewProfile.TabIndex = 13;
+            this.viewProfile.Text = "View profile";
+            this.viewProfile.UseVisualStyleBackColor = true;
+            this.viewProfile.Click += new System.EventHandler(this.buttonPress);
+            // 
             // label5
             // 
             this.label5.AutoSize = true;
@@ -282,6 +293,7 @@
             this.listBox1.Name = "listBox1";
             this.listBox1.Size = new System.Drawing.Size(595, 368);
             this.listBox1.TabIndex = 0;
+            this.listBox1.DoubleClick += new System.EventHandler(this.listBox1_DoubleClick);
             // 
             // openSettings
             // 
@@ -313,17 +325,6 @@
             this.deletePlayerToolStripMenuItem.Name = "deletePlayerToolStripMenuItem";
             this.deletePlayerToolStripMenuItem.Size = new System.Drawing.Size(145, 22);
             this.deletePlayerToolStripMenuItem.Text = "Delete player.";
-            // 
-            // viewProfile
-            // 
-            this.viewProfile.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.viewProfile.Location = new System.Drawing.Point(7, 407);
-            this.viewProfile.Name = "viewProfile";
-            this.viewProfile.Size = new System.Drawing.Size(87, 27);
-            this.viewProfile.TabIndex = 13;
-            this.viewProfile.Text = "View profile";
-            this.viewProfile.UseVisualStyleBackColor = true;
-            this.viewProfile.Click += new System.EventHandler(this.buttonPress);
             // 
             // Form1
             // 
